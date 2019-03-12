@@ -57,7 +57,7 @@ var noteInfo = new Array(108);
 
 // Function to handle noteOn messages (ie. key is pressed)
 function noteOn(note, velocity) {
-    
+    noteActive[note] = true;
     setNoteInfo(note, velocity);
 }
 
@@ -66,5 +66,6 @@ function noteOff(note, velocity) {
 }
 
 function noteOffCallback(note, velocity) {
+    noteInfo[note][8] = true;
     fadeOut(note);
 }

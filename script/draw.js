@@ -88,19 +88,22 @@ function drawRadial(note) {
 
 function fadeOut(note) {
     var inter = setInterval(frame, 50);
+    console.log(note, noteInfo[note][8]);
     function frame() {
-        if (noteInfo[note][7] < 0.1) {
-            noteActive[note] = false;
-            clearInterval(inter);
-        }
-        else {
+        if (noteInfo[note][8] && noteInfo[note][7] > 0.01 && noteActive[note]) {
             noteInfo[note][7] -= 0.1;
         }
+        else {
+            clearInterval(inter);
+        }
+    }
+    if (noteInfo[note][7] < 0.01) {
+        noteActive[note] = false;
     }
 }
 
 function setNoteInfo(note, velocity) {
-  
+    
     //Color
     var noteNum = note % 12;
     switch (noteNum) {
@@ -150,8 +153,8 @@ function setNoteInfo(note, velocity) {
     //Radial
     var x0=xValue, y0=canvas.height/2, r0=10, x1=xValue, y1=canvas.height/2, r1=200+(velocity*2);
     var ga = 1.0;   //initial global alpha
-    noteActive[note] = true;
-    noteInfo[note] = [x0,y0,r0,x1,y1,r1,noteColor,ga];
+    var fade = false;
+    noteInfo[note] = [x0,y0,r0,x1,y1,r1,noteColor,ga,fade];
     
 
 }
