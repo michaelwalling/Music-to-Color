@@ -36,7 +36,7 @@ function resizeCanvas() {
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 console.log("Canvas resized. H:"+canvas.height+" W:"+canvas.width);
-redraw();
+//redraw();
     
 }
 })();

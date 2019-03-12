@@ -86,19 +86,17 @@ function drawRadial(note) {
         c.fillRect(x,y,w,h);
     }
 
-function fadeOut(obj) {
-    //obj.globalAlpha = 0.0;
-
-    function frame(obj) {
-        console.log(obj.globalAlpha);
-        if (obj.globalAlpha == 0.0) {
+function fadeOut(note) {
+    var inter = setInterval(frame, 50);
+    function frame() {
+        if (noteInfo[note][7] < 0.1) {
+            noteActive[note] = false;
             clearInterval(inter);
         }
         else {
-            obj.globalAlpha -= 0.1;
+            noteInfo[note][7] -= 0.1;
         }
     }
-    
 }
 
 function setNoteInfo(note, velocity) {
@@ -150,8 +148,8 @@ function setNoteInfo(note, velocity) {
     //xValue = (note-lowestnote)/(highestnote-lowestnote) * canvasWidth
     var xValue = (note-25)/(84-25) * canvas.width;
     //Radial
-    var x0=xValue, y0=canvas.height/2, r0=10, x1=xValue, y1=canvas.height/2, r1=100+(velocity*5);
-    var ga=0.5;   //initial global alpha
+    var x0=xValue, y0=canvas.height/2, r0=10, x1=xValue, y1=canvas.height/2, r1=200+(velocity*2);
+    var ga = 1.0;   //initial global alpha
     noteActive[note] = true;
     noteInfo[note] = [x0,y0,r0,x1,y1,r1,noteColor,ga];
     

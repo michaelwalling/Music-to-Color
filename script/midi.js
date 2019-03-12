@@ -66,5 +66,5 @@ function noteOff(note, velocity) {
 }
 
 function noteOffCallback(note, velocity) {
-    noteActive[note] = false;
+    fadeOut(note);
 }
