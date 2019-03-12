@@ -1,0 +1,138 @@
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 29px;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: rgba(50,50,50,0.4);
+  margin: auto;
+  padding: 0;
+  border: 2px solid #fff;
+  width: 850px;
+  -webkit-animation-name: animate;
+  -webkit-animation-duration: 0.5s;
+  animation-name: animate;
+  animation-duration: 0.5s
+}
+
+/* Add Animation */
+@-webkit-keyframes animate {
+  from {opacity:0} 
+  to {opacity:1}
+}
+
+@keyframes animate {
+  from { opacity:0}
+  to { opacity:1}
+}
+
+/* The Close Button */
+.close {
+    position:absolute;
+    color: #818181;
+    font-size: 40px;
+    font-weight: bold;
+    right: 30px;
+    top: 8px;
+}
+
+.close:hover,
+.close:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  margin-top: 10px;
+  color: white;
+}
+
+.modal-body {
+    padding-left: 60px;
+    padding-right:60px;
+    text-align: left;
+    color: #fff;
+}
+
+.modal-footer {
+  margin-bottom: 10px;
+  color: white;
+}
+
+#container{
+    width: 90%;
+}
+#container > div{
+    float: left;
+    padding-right: 50px;
+    text-align: left;
+}
+.green{
+    color:lime;
+}
+
+.red{
+    color: #f44242;
+}
+
+/*clearfix*/
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+
+/* Create two unequal columns that floats next to each other */
+.column1 {
+    width: 100px;
+    font-size: 20px;
+    text-align: right;
+    padding-right: 8px;
+    float: left;
+}
+
+.column2 {
+    width: 200px;
+    float: left;
+}
+
+.column3 {
+    width: 400px;
+    float: left;
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* Color Keyboard */
+.white-key {
+    height: 200px;
+    width: 50px;
+    border-style: solid;
+    border-width: 2px;
+    border-color:black;
+    float: left;
+}

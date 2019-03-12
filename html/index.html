@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MUSIC-TO-COLOR</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="../script/WebMIDIAPI.min.js"></script>
+    <script src="../script/midi.js"></script>
+    <script src="../script/listDevices.js"></script>
+    <script src="../script/jscolor.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../style/main.css">
+    <link rel="stylesheet" type="text/css" href="../style/modal.css">
+    
+</head>
+<body>
+    <canvas id='canvas' style = 'position: absolute; left: 0px; top: 0px;' ></canvas>
+    
+    <div id="x_result"></div>
+    <!-- Overlay -->
+    <div id="myNav" class="overlay">
+    <div class="overlay-content">
+        <h1>MENU</h1>
+        <hr style="border: 0.5px solid white;"/>
+        <a onclick="openModal1()" href="#">INSTRUMENT</a>
+        <!-- Modal 1-->
+        <div id="modal1" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>INSTRUMENT</h2>
+                    <hr style="border: 0.5px solid white;"/>
+                </div>
+                <div class="modal-body">
+                    <div id="container" class="cf">
+                        <div id="inputs"></div>
+                        <div id="outputs"></div>
+                    </div>
+                    <div class="space"></div>
+                </div>
+                <div class="modal-footer">
+                    <hr style="border: 0.5px solid white;"/>
+                    <button onclick="location.href='index.html'" style="display:block; margin: 0 auto; height:30px;">Apply</button><br>
+                </div>
+            </div>
+        </div>
+        
+        <a onclick="openModal2()" href="#">COLOR</a>
+        <!-- Modal 2-->
+        <div id="modal2" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>COLOR</h2>
+                    <hr style="border: 0.5px solid white;"/>
+                </div>
+                <div class="modal-body">
+                    <h3>CHOOSE A COLOR FOR EACH NOTE:</h3>
+                    <span class="column1">
+                        C -<br>
+                        C#/Db -<br>
+                        D -<br>
+                        D#/Eb -<br>
+                        E -<br>
+                        F -<br>
+                        F#/Gb -<br>
+                        G -<br>
+                        G#/Ab -<br>
+                        A -<br>
+                        A#/Bb -<br>
+                        B -<br>
+                    </span>
+                    <span class="column2">
+                        <input id="selectColorC" type="hidden" value="ff0000">
+                        <button id="buttonColorC" class="jscolor {valueElement: 'selectColorC'}" style="width:65px; height:25px;"></button><br>
+                        <input id="selectColorDb" type="hidden" value="cf9bff">
+                        <button id="buttonColorDb" class="jscolor {valueElement: 'selectColorDb'}" style="width:65px; height:25px;"></button><br>
+                        <input id="selectColorD" type="hidden" value="ffff00">
+                        <button id="buttonColorD" class="jscolor {valueElement: 'selectColorD'}" style="width:65px; height:25px;"></button><br>
+                        <input id="selectColorEb" type="hidden" value="65659a">
+                        <button id="buttonColorEb" class="jscolor {valueElement: 'selectColorEb'}" style="width:65px; height:25px;"></button><br>
+                        <input id="selectColorE" type="hidden" value="e4fbff">
+                        <button id="buttonColorE" class="jscolor {valueElement: 'selectColorE'}" style="width:65px; height:25px;"></button><br>
+                        <input id="selectColorF" type="hidden" value="ad1500">
+                        <button id="buttonColorF" class="jscolor {valueElement: 'selectColorF'}" style="width:65px; height:25px;"></button><br>
+                        <input id="selectColorGb" type="hidden" value="00cdff">
+                        <button id="buttonColorGb" class="jscolor {valueElement: 'selectColorGb'}" style="width:65px; height:25px;"></button><br>
+                        <input id="selectColorG" type="hidden" value="ff6500">
+                        <button id="buttonColorG" class="jscolor {valueElement: 'selectColorG'}" style="width:65px; height:25px;"></button><br>
+                        <input id="selectColorAb" type="hidden" value="ff00ff">
+                        <button id="buttonColorAb" class="jscolor {valueElement: 'selectColorAb'}" style="width:65px; height:25px;"></button><br>
+                        <input id="selectColorA" type="hidden" value="2fcd30">
+                        <button id="buttonColorA" class="jscolor {valueElement: 'selectColorA'}" style="width:65px; height:25px;"></button><br>
+                        <input id="selectColorBb" type="hidden" value="8d8b8d">
+                        <button id="buttonColorBb" class="jscolor {valueElement: 'selectColorBb'}" style="width:65px; height:25px;"></button><br>
+                        <input id="selectColorB" type="hidden" value="0000fe">
+                        <button id="buttonColorB" class="jscolor {valueElement: 'selectColorB'}" style="width:65px; height:25px; margin-bottom:25px"></button><br>
+                    </span>
+                  
+                </div>
+                <div class="modal-footer">
+                    <hr style="border: 0.5px solid white;"/>
+                    <button id="resetColors" onclick="resetColors()" style="height:30px; margin-right:20px;">Reset All</button>
+                    <button id="applyColors" onclick="setColors()" style="height:30px;">Apply</button><br>
+                </div>
+            </div>
+        </div>
+        
+        <a onclick="openModal3()" href="#">STYLE</a>
+        <!-- Modal 1-->
+        <div id="modal3" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>STYLE</h2>
+                    <hr style="border: 0.5px solid white;"/>
+                </div>
+                <div class="modal-body">
+                    <h3>SIZE:</h3>
+                    <span></span>
+                    <div class="space"></div>
+                    <h3>RANGE:</h3>
+                    <div class="space"></div>
+                    <h3>VELOCITY RATIO:</h3>
+                    <div class="space"></div>
+                    <h3>FADE TIME:</h3>
+                    <div class="space"></div>
+                </div>
+            </div>
+        </div>
+        
+        <a href="info.html">INFO</a>
+    </div>
+    </div>
+
+    <script src="../script/menu.js"></script>
+    <script src="../script/canvas.js"></script>
+    <script src="../script/draw.js"></script>
+</body>
+</html>
