@@ -46,7 +46,6 @@ function setColors() {
 
 
 let request;
-
 const draw = () => {
     request = requestAnimationFrame(draw);
     c.clearRect(0, 0, canvas.width, canvas.height);
@@ -58,7 +57,6 @@ const draw = () => {
         }
     }
 }
-
 requestAnimationFrame(draw);
 
 function drawRadial(note) {
@@ -88,7 +86,6 @@ function drawRadial(note) {
 
 function fadeOut(note) {
     var inter = setInterval(frame, 50);
-    console.log(note, noteInfo[note][8]);
     function frame() {
         if (noteInfo[note][8] && noteInfo[note][7] > 0.01 && noteActive[note]) {
             noteInfo[note][7] -= 0.1;
@@ -149,11 +146,12 @@ function setNoteInfo(note, velocity) {
     
     //xValue Mapping:
     //xValue = (note-lowestnote)/(highestnote-lowestnote) * canvasWidth
-    var xValue = (note-25)/(84-25) * canvas.width;
+    var xValue = (note-36)/(84-36) * canvas.width;
     //Radial
-    var x0=xValue, y0=canvas.height/2, r0=10, x1=xValue, y1=canvas.height/2, r1=200+(velocity*2);
-    var ga = 1.0;   //initial global alpha
+    var x0=xValue, y0=canvas.height/2, r0=10, x1=xValue, y1=canvas.height/2, r1=300+(velocity*2);
+    var ga = 0.7;   //initial global alpha
     var fade = false;
+    
     noteInfo[note] = [x0,y0,r0,x1,y1,r1,noteColor,ga,fade];
     
 
