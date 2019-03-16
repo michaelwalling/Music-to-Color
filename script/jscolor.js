@@ -984,7 +984,7 @@ var jsc = {
 		this.required = true; // whether the associated text <input> can be left empty
 		this.refine = true; // whether to refine the entered color code (e.g. uppercase it and remove whitespace)
 		this.hash = false; // whether to prefix the HEX color code with # symbol
-		this.uppercase = false; // whether to show the color code in upper case
+		this.uppercase = true; // whether to show the color code in upper case
 		this.onFineChange = null; // called instantly every time the color changes (value can be either a function or a string with javascript code)
 		this.activeClass = 'jscolor-active'; // class to be set to the target element when a picker window is open on it
 		this.overwriteImportant = false; // whether to overwrite colors of styleElement using !important
@@ -1000,20 +1000,20 @@ var jsc = {
 
 		// Color Picker options
 		//
-		this.width = 181; // width of color palette (in px)
-		this.height = 101; // height of color palette (in px)
+		this.width = 240; // width of color palette (in px)
+		this.height = 150; // height of color palette (in px)
 		this.showOnClick = true; // whether to display the color picker when user clicks on its target element
 		this.mode = 'HSV'; // HSV | HVS | HS | HV - layout of the color picker controls
 		this.position = 'right'; // left | right | top | bottom - position relative to the target element
 		this.smartPosition = true; // automatically change picker position when there is not enough space for it
 		this.sliderSize = 16; // px
 		this.crossSize = 8; // px
-		this.closable = true; // whether to display the Close button
+		this.closable = false; // whether to display the Close button
 		this.closeText = 'OK';
 		this.buttonColor = '#FFFFFF'; // CSS color
 		this.buttonHeight = 18; // px
 		this.padding = 12; // px
-		this.backgroundColor = '#000000'; // CSS color
+		this.backgroundColor = '#222'; // CSS color
 		this.borderWidth = 1; // px
 		this.borderColor = '#FFFFFF'; // CSS color
 		this.borderRadius = 8; // px

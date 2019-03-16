@@ -15,18 +15,18 @@ var colorC ="#ff0000",
     colorB ="#0000fe";
 
 function resetColors() {
-    colorC ="#ff0000"; document.getElementById('buttonColorC').jscolor.fromString('ff0000');
-    colorDb="#cf9bff"; document.getElementById('buttonColorDb').jscolor.fromString('cf9bff');
-    colorD ="#ffff00"; document.getElementById('buttonColorD').jscolor.fromString('ffff00');
-    colorEb="#65659a"; document.getElementById('buttonColorEb').jscolor.fromString('65659a');
-    colorE ="#e4fbff"; document.getElementById('buttonColorE').jscolor.fromString('e4fbff');
-    colorF ="#ad1500"; document.getElementById('buttonColorF').jscolor.fromString('ad1500');
-    colorGb="#00cdff"; document.getElementById('buttonColorGb').jscolor.fromString('00cdff');
-    colorG ="#ff6500"; document.getElementById('buttonColorG').jscolor.fromString('ff6500');
-    colorAb="#ff00ff"; document.getElementById('buttonColorAb').jscolor.fromString('ff00ff');
-    colorA ="#2fcd30"; document.getElementById('buttonColorA').jscolor.fromString('2fcd30');
-    colorBb="#8d8b8d"; document.getElementById('buttonColorBb').jscolor.fromString('8d8b8d');
-    colorB ="#0000fe"; document.getElementById('buttonColorB').jscolor.fromString('0000fe');
+    document.getElementById('buttonColorC').value = 'ff0000';
+    document.getElementById('buttonColorDb').value = 'cf9bff';
+    document.getElementById('buttonColorD').value = 'ffff00';
+    document.getElementById('buttonColorEb').value = '65659a';
+    document.getElementById('buttonColorE').value = 'e4fbff';
+    document.getElementById('buttonColorF').value = 'ad1500';
+    document.getElementById('buttonColorGb').value = '00cdff';
+    document.getElementById('buttonColorG').value = 'ff6500';
+    document.getElementById('buttonColorAb').value = 'ff00ff';
+    document.getElementById('buttonColorA').value = '2fcd30';
+    document.getElementById('buttonColorBb').value = '8d8b8d';
+    document.getElementById('buttonColorB').value = '0000fe';
 }
 
 function setColors() {
