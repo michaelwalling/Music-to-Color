@@ -1,51 +1,6 @@
 var canvas = document.getElementById('canvas');
 var c = canvas.getContext('2d');
 
-var colorC ="#ff0000",
-    colorDb="#cf9bff",
-    colorD ="#ffff00",
-    colorEb="#65659a",
-    colorE ="#e4fbff",
-    colorF ="#ad1500",
-    colorGb="#00cdff",
-    colorG ="#ff6500",
-    colorAb="#ff00ff",
-    colorA ="#2fcd30",
-    colorBb="#8d8b8d",
-    colorB ="#0000fe";
-
-function resetColors() {
-    colorC ="#ff0000"; document.getElementById('buttonColorC').jscolor.fromString('ff0000');
-    colorDb="#cf9bff"; document.getElementById('buttonColorDb').jscolor.fromString('cf9bff');
-    colorD ="#ffff00"; document.getElementById('buttonColorD').jscolor.fromString('ffff00');
-    colorEb="#65659a"; document.getElementById('buttonColorEb').jscolor.fromString('65659a');
-    colorE ="#e4fbff"; document.getElementById('buttonColorE').jscolor.fromString('e4fbff');
-    colorF ="#ad1500"; document.getElementById('buttonColorF').jscolor.fromString('ad1500');
-    colorGb="#00cdff"; document.getElementById('buttonColorGb').jscolor.fromString('00cdff');
-    colorG ="#ff6500"; document.getElementById('buttonColorG').jscolor.fromString('ff6500');
-    colorAb="#ff00ff"; document.getElementById('buttonColorAb').jscolor.fromString('ff00ff');
-    colorA ="#2fcd30"; document.getElementById('buttonColorA').jscolor.fromString('2fcd30');
-    colorBb="#8d8b8d"; document.getElementById('buttonColorBb').jscolor.fromString('8d8b8d');
-    colorB ="#0000fe"; document.getElementById('buttonColorB').jscolor.fromString('0000fe');
-}
-
-function setColors() {
-    console.log('#'+document.getElementById("selectColorC").value);
-    colorC  = '#'+document.getElementById("selectColorC").value;
-    colorDb = '#'+document.getElementById("selectColorDb").value;
-    colorD  = '#'+document.getElementById("selectColorD").value;
-    colorEb = '#'+document.getElementById("selectColorEb").value;
-    colorE  = '#'+document.getElementById("selectColorE").value;
-    colorF  = '#'+document.getElementById("selectColorF").value;
-    colorGb = '#'+document.getElementById("selectColorGb").value;
-    colorG  = '#'+document.getElementById("selectColorG").value;
-    colorAb = '#'+document.getElementById("selectColorAb").value;
-    colorA  = '#'+document.getElementById("selectColorA").value;
-    colorBb = '#'+document.getElementById("selectColorBb").value;
-    colorB  = '#'+document.getElementById("selectColorB").value;
-}
-
-
 let request;
 const draw = () => {
     request = requestAnimationFrame(draw);

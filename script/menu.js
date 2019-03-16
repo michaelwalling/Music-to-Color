@@ -75,6 +75,61 @@ window.onclick = function(event) {
     }
 }
 
+var colorC ="#ff0000",
+    colorDb="#cf9bff",
+    colorD ="#ffff00",
+    colorEb="#65659a",
+    colorE ="#e4fbff",
+    colorF ="#ad1500",
+    colorGb="#00cdff",
+    colorG ="#ff6500",
+    colorAb="#ff00ff",
+    colorA ="#2fcd30",
+    colorBb="#8d8b8d",
+    colorB ="#0000fe";
+
+function randomizeColors() {
+    var randColorC  = Math.floor(Math.random()*16777215).toString(16);
+    var randColorDb = Math.floor(Math.random()*16777215).toString(16);
+    var randColorD  = Math.floor(Math.random()*16777215).toString(16);
+    var randColorEb = Math.floor(Math.random()*16777215).toString(16);
+    var randColorE  = Math.floor(Math.random()*16777215).toString(16);
+    var randColorF  = Math.floor(Math.random()*16777215).toString(16);
+    var randColorGb = Math.floor(Math.random()*16777215).toString(16);
+    var randColorG  = Math.floor(Math.random()*16777215).toString(16);
+    var randColorAb = Math.floor(Math.random()*16777215).toString(16);
+    var randColorA  = Math.floor(Math.random()*16777215).toString(16);
+    var randColorBb = Math.floor(Math.random()*16777215).toString(16);
+    var randColorB  = Math.floor(Math.random()*16777215).toString(16);
+    colorC ="#"+randColorC;  document.getElementById('buttonColorC').jscolor.fromString(randColorC);
+    colorDb="#"+randColorDb; document.getElementById('buttonColorDb').jscolor.fromString(randColorDb);
+    colorD ="#"+randColorD;  document.getElementById('buttonColorD').jscolor.fromString(randColorD);
+    colorEb="#"+randColorEb; document.getElementById('buttonColorEb').jscolor.fromString(randColorEb);
+    colorE ="#"+randColorE;  document.getElementById('buttonColorE').jscolor.fromString(randColorE);
+    colorF ="#"+randColorF;  document.getElementById('buttonColorF').jscolor.fromString(randColorF);
+    colorGb="#"+randColorGb; document.getElementById('buttonColorGb').jscolor.fromString(randColorGb);
+    colorG ="#"+randColorG;  document.getElementById('buttonColorG').jscolor.fromString(randColorG);
+    colorAb="#"+randColorAb; document.getElementById('buttonColorAb').jscolor.fromString(randColorAb);
+    colorA ="#"+randColorA;  document.getElementById('buttonColorA').jscolor.fromString(randColorA);
+    colorBb="#"+randColorBb; document.getElementById('buttonColorBb').jscolor.fromString(randColorBb);
+    colorB ="#"+randColorB;  document.getElementById('buttonColorB').jscolor.fromString(randColorB);
+}
+
+function applyColors() {
+    colorC  = '#'+document.getElementById("selectColorC").value;
+    colorDb = '#'+document.getElementById("selectColorDb").value;
+    colorD  = '#'+document.getElementById("selectColorD").value;
+    colorEb = '#'+document.getElementById("selectColorEb").value;
+    colorE  = '#'+document.getElementById("selectColorE").value;
+    colorF  = '#'+document.getElementById("selectColorF").value;
+    colorGb = '#'+document.getElementById("selectColorGb").value;
+    colorG  = '#'+document.getElementById("selectColorG").value;
+    colorAb = '#'+document.getElementById("selectColorAb").value;
+    colorA  = '#'+document.getElementById("selectColorA").value;
+    colorBb = '#'+document.getElementById("selectColorBb").value;
+    colorB  = '#'+document.getElementById("selectColorB").value;
+}
+
 document.getElementById("colorPresets").onchange = function() {
     var preset = document.getElementById("colorPresets").value;
     switch (preset) {
