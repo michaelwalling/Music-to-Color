@@ -101,15 +101,16 @@
 
 /* Create two unequal columns that floats next to each other */
 .column1 {
-    width: 100px;
+    width: 150px;
     font-size: 20px;
     text-align: right;
     padding-right: 8px;
+    line-height: 33px;
     float: left;
 }
 
 .column2 {
-    width: 200px;
+    width: 155px;
     float: left;
 }
 

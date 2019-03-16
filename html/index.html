@@ -44,7 +44,7 @@
                 </div>
                 <div class="modal-footer">
                     <hr style="border: 0.5px solid white;"/>
-                    <button onclick="location.href='index.html'" style="display:block; margin: 0 auto; padding:6px;">Apply</button><br>
+                    <button onclick="location.href='index.html'" style="padding:6px; margin-bottom:5px">Apply</button><br>
                 </div>
             </div>
         </div>
@@ -60,9 +60,9 @@
                     <hr style="border: 0.5px solid white;"/>
                 </div>
                 <div class="modal-body">
-                    <h3>CHOOSE A COLOR FOR EACH NOTE:</h3>
+                    <h3 style="text-align: center">CHOOSE A COLOR FOR EACH NOTE OR PICK FROM A PRESET.</h3>
                     <span class="column1">
-                        C -<br>
+                        C - <br>
                         C#/Db -<br>
                         D -<br>
                         D#/Eb -<br>
@@ -76,27 +76,55 @@
                         B -<br>
                     </span>
                     <span class="column2">
-                        <input id="selectColorC" value="ff0000" class="jscolor" style="width:65px; height:20px; margin-bottom:4px"><br>
-                        <input id="selectColorDb" value="cf9bff" class="jscolor" style="width:65px; height:20px; margin-bottom:4px"><br>
-                        <input id="selectColorD" value="ffff00" class="jscolor" style="width:65px; height:20px; margin-bottom:4px"><br>
-                        <input id="selectColorEb" value="65659a" class="jscolor" style="width:65px; height:20px; margin-bottom:4px"><br>
-                        <input id="selectColorE" value="e4fbff" class="jscolor" style="width:65px; height:20px; margin-bottom:4px"><br>
-                        <input id="selectColorF" value="ad1500" class="jscolor" style="width:65px; height:20px; margin-bottom:4px"><br>
-                        <input id="selectColorGb" value="00cdff" class="jscolor" style="width:65px; height:20px; margin-bottom:4px"><br>
-                        <input id="selectColorG" value="ff6500" class="jscolor" style="width:65px; height:20px; margin-bottom:4px"><br>
-                        <input id="selectColorAb" value="ff00ff" class="jscolor" style="width:65px; height:20px; margin-bottom:4px"><br>
-                        <input id="selectColorA" value="2fcd30" class="jscolor" style="width:65px; height:20px; margin-bottom:4px"><br>
-                        <input id="selectColorBb" value="8d8b8d" class="jscolor" style="width:65px; height:20px; margin-bottom:4px"><br>
-                        <input id="selectColorB" value="0000fe" class="jscolor" style="width:65px; height:20px; margin-bottom:20px"><br>
+                        <input id="selectColorC" type="hidden" value="ff0000">
+                        <button id="buttonColorC" class="jscolor {valueElement: 'selectColorC'}" style="width:65px; height:28px;"></button><br>
+                        <input id="selectColorDb" type="hidden" value="cf9bff">
+                        <button id="buttonColorDb" class="jscolor {valueElement: 'selectColorDb'}" style="width:65px; height:28px;"></button><br>
+                        <input id="selectColorD" type="hidden" value="ffff00">
+                        <button id="buttonColorD" class="jscolor {valueElement: 'selectColorD'}" style="width:65px; height:28px;"></button><br>
+                        <input id="selectColorEb" type="hidden" value="65659a">
+                        <button id="buttonColorEb" class="jscolor {valueElement: 'selectColorEb'}" style="width:65px; height:28px;"></button><br>
+                        <input id="selectColorE" type="hidden" value="e4fbff">
+                        <button id="buttonColorE" class="jscolor {valueElement: 'selectColorE'}" style="width:65px; height:28px;"></button><br>
+                        <input id="selectColorF" type="hidden" value="ad1500">
+                        <button id="buttonColorF" class="jscolor {valueElement: 'selectColorF'}" style="width:65px; height:28px;"></button><br>
+                        <input id="selectColorGb" type="hidden" value="00cdff">
+                        <button id="buttonColorGb" class="jscolor {valueElement: 'selectColorGb'}" style="width:65px; height:28px;"></button><br>
+                        <input id="selectColorG" type="hidden" value="ff6500">
+                        <button id="buttonColorG" class="jscolor {valueElement: 'selectColorG'}" style="width:65px; height:28px;"></button><br>
+                        <input id="selectColorAb" type="hidden" value="ff00ff">
+                        <button id="buttonColorAb" class="jscolor {valueElement: 'selectColorAb'}" style="width:65px; height:28px;"></button><br>
+                        <input id="selectColorA" type="hidden" value="2fcd30">
+                        <button id="buttonColorA" class="jscolor {valueElement: 'selectColorA'}" style="width:65px; height:28px;"></button><br>
+                        <input id="selectColorBb" type="hidden" value="8d8b8d">
+                        <button id="buttonColorBb" class="jscolor {valueElement: 'selectColorBb'}" style="width:65px; height:28px;"></button><br>
+                        <input id="selectColorB" type="hidden" value="0000fe">
+                        <button id="buttonColorB" class="jscolor {valueElement: 'selectColorB'}" style="width:65px; height:28px; margin-bottom:20px"></button><br>
                     </span>
                     <span class="column3">
-                        
+                        Color Scale Presets:
+                        <select id="colorPresets">
+                            <option value="0">-</option>
+                            <option value="1">Issac Newton (1704)</option>
+                            <option value="2">Louis Bertrand Castel (1734)</option>
+                            <option value="3">George Field (1816)</option>
+                            <option value="4">D. D. Jameson (1844)</option>
+                            <option value="5">Theodor Seemann (1881)</option>
+                            <option value="6">A. Wallace Rimington (1893)</option>
+                            <option value="7">Bainbridge Bishop (1893)</option>
+                            <option value="8">H. von Helmholtz (1910)</option>
+                            <option value="9">Alexander Scriabin (1911)</option>
+                            <option value="10">Adrian Bernard Klein (1930)</option>
+                            <option value="11">August Aeppli (1940)</option>
+                            <option value="12">I. J. Belmont (1944)</option>
+                            <option value="13">Steve Zieverink (2004)</option>
+                        </select>
                     </span>
                 </div>
                 <div class="modal-footer">
                     <hr style="border: 0.5px solid white;"/>
-                    <button id="resetColors" onclick="resetColors()" style="padding:6px; margin-right:20px;">Reset All</button>
-                    <button id="applyColors" onclick="setColors()" style="padding:6px;">Apply</button><br>
+                    <button id="resetColors" onclick="resetColors()" style="padding:6px; margin-right:15px;">Reset All</button>
+                    <button id="applyColors" onclick="setColors()" style="padding:6px; margin-bottom:5px">Apply</button><br>
                 </div>
             </div>
         </div>

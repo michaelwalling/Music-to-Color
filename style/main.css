@@ -14,14 +14,20 @@ h3 {
     margin-bottom:10px;
 }
 
-/*
-.container {
-    margin: auto;
-    width: 800px;
-}
-*/
-
 .space { margin-top: 40px; }
+
+button {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
 
 /* link settings */
 a:link {
@@ -82,7 +88,6 @@ hr {
     margin: 1em auto;
     padding: 0;
 }
-
 
 /* Info page style */
 #text1 {
