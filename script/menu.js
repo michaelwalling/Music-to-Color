@@ -130,7 +130,61 @@ function applyColors() {
     colorB  = '#'+document.getElementById("selectColorB").value;
 }
 
+var tranNum = 0;
+var tranValue = document.getElementById('transposeValue');
+function transposeColors(direction) {
+    switch (direction) {
+        case 'down':
+            tranNum -= 1;
+            var placeholder = document.getElementById("selectColorC").value;
+            document.getElementById('buttonColorC').jscolor.fromString(document.getElementById("selectColorDb").value);
+            document.getElementById('buttonColorDb').jscolor.fromString(document.getElementById("selectColorD").value);
+            document.getElementById('buttonColorD').jscolor.fromString(document.getElementById("selectColorEb").value);
+            document.getElementById('buttonColorEb').jscolor.fromString(document.getElementById("selectColorE").value);
+            document.getElementById('buttonColorE').jscolor.fromString(document.getElementById("selectColorF").value);
+            document.getElementById('buttonColorF').jscolor.fromString(document.getElementById("selectColorGb").value);
+            document.getElementById('buttonColorGb').jscolor.fromString(document.getElementById("selectColorG").value);
+            document.getElementById('buttonColorG').jscolor.fromString(document.getElementById("selectColorAb").value);
+            document.getElementById('buttonColorAb').jscolor.fromString(document.getElementById("selectColorA").value);
+            document.getElementById('buttonColorA').jscolor.fromString(document.getElementById("selectColorBb").value);
+            document.getElementById('buttonColorBb').jscolor.fromString(document.getElementById("selectColorB").value);
+            document.getElementById('buttonColorB').jscolor.fromString(placeholder);
+            break;
+        case 'up':
+            tranNum += 1;
+            var placeholder = document.getElementById("selectColorB").value;
+            document.getElementById('buttonColorB').jscolor.fromString(document.getElementById("selectColorBb").value);
+            document.getElementById('buttonColorBb').jscolor.fromString(document.getElementById("selectColorA").value);
+            document.getElementById('buttonColorA').jscolor.fromString(document.getElementById("selectColorAb").value);
+            document.getElementById('buttonColorAb').jscolor.fromString(document.getElementById("selectColorG").value);
+            document.getElementById('buttonColorG').jscolor.fromString(document.getElementById("selectColorGb").value);
+            document.getElementById('buttonColorGb').jscolor.fromString(document.getElementById("selectColorF").value);
+            document.getElementById('buttonColorF').jscolor.fromString(document.getElementById("selectColorE").value);
+            document.getElementById('buttonColorE').jscolor.fromString(document.getElementById("selectColorEb").value);
+            document.getElementById('buttonColorEb').jscolor.fromString(document.getElementById("selectColorD").value);
+            document.getElementById('buttonColorD').jscolor.fromString(document.getElementById("selectColorDb").value);
+            document.getElementById('buttonColorDb').jscolor.fromString(document.getElementById("selectColorC").value);
+            document.getElementById('buttonColorC').jscolor.fromString(placeholder);
+            break;
+    }
+    
+    if (tranNum >= 0) {
+        tranValue.innerHTML = "+" + tranNum; }
+    if (tranNum < 0) {
+        tranValue.innerHTML = tranNum; }
+    if (tranNum == 12) {
+        tranNum = 0;
+        tranValue.innerHTML = "+" + tranNum; }
+    if (tranNum == -12) {
+        tranNum = 0;
+        tranValue.innerHTML = tranNum; }
+}
+
+
+
 document.getElementById("colorPresets").onchange = function() {
+    tranNum = 0;
+    tranValue.innerHTML = tranNum;
     var preset = document.getElementById("colorPresets").value;
     switch (preset) {
         case "default":

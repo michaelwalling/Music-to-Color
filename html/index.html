@@ -44,7 +44,7 @@
                 </div>
                 <div class="modal-footer">
                     <hr style="border: 0.5px solid white;"/>
-                    <button onclick="location.href='index.html'" style="padding:6px; margin-bottom:5px">Apply</button><br>
+                    <button onclick="location.href='index.html'" style="padding:6px; margin-bottom:5px">Apply Changes</button><br>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
                 <div class="modal-body">
                     <h3 style="text-align: center">CLICK ON A COLOR TO CUSTOMIZE IT OR CHOOSE FROM A PRESET</h3>
                     <span class="column1">
-                        C - <br>
+                        C -<br>
                         C#/Db -<br>
                         D -<br>
                         D#/Eb -<br>
@@ -102,6 +102,7 @@
                         <button id="buttonColorB" class="jscolor {valueElement: 'selectColorB'}" style="width:65px; height:28px; margin-bottom:20px"></button><br>
                     </span>
                     <span class="column3">
+                        <br>
                         Color Scale Presets:
                         <select id="colorPresets">
                             <option value="default">Default</option>
@@ -119,12 +120,17 @@
                             <option value="belmont">I. J. Belmont (1944)</option>
                             <option value="zieverink">Steve Zieverink (2004)</option>
                         </select>
+                        <div class="space"></div>
+                        Transpose Colors:
+                        <button onclick="transposeColors('down')" style="padding-left:15px; padding-right:15px; padding-top:6px; padding-bottom: 6px">-</button>
+                        <span id="transposeValue">0</span>
+                        <button onclick="transposeColors('up')" style="padding-left:15px; padding-right:15px; padding-top:6px; padding-bottom: 6px">+</button>
                     </span>
                 </div>
                 <div class="modal-footer">
                     <hr style="border: 0.5px solid white;"/>
-                    <button id="resetColors" onclick="randomizeColors()" style="padding:6px; margin-right:285px;">Randomize</button>
-                    <button id="applyColors" onclick="applyColors()" style="padding:6px; margin-bottom:5px">Apply</button><br>
+                    <button id="resetColors" onclick="randomizeColors()" style="padding:6px; margin-right:210px;">Randomize</button>
+                    <button id="applyColors" onclick="applyColors()" style="padding:6px; margin-bottom:5px">Apply Changes</button><br>
                 </div>
             </div>
         </div>
