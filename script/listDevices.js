@@ -35,14 +35,14 @@ window.onload = function () {
             outputs = midiAccess.outputs,
             html;
         
-        html = '<h3>CONNECTED DEVICES:</h3>';
+        html = '<h3>CONNECTED MIDI DEVICES:</h3>';
         inputs.forEach((port) => {
             html += '<span class="green"><b>' + port.name + '</b></span><br>';
             html += '<span class="green">Manufacturer: ' + port.manufacturer + '</span><br>';
             html += '<span class="green">Version: ' + port.version + '</span><br>';
             html += '<span class="green">ID: ' + port.id + '</span><br><br>';
         });
-        if (html == '<h3>CONNECTED DEVICES:</h3>') {
+        if (html == '<h3>CONNECTED MIDI DEVICES:</h3>') {
             html += '<span class="red">No devices found.</span><br>';
             console.log('No MIDI devices found.')
         }

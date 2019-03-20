@@ -24,16 +24,16 @@
     <div id="myNav" class="overlay">
     <div class="overlay-content">
         <h1>MENU</h1>
-        <hr style="border: 0.5px solid white;"/>
-        <a onclick="openModal1()" href="#">INSTRUMENT</a>
+        <hr style="border: 0.5px solid white; width:75%"/>
+        <a onclick="openModal1()" href="#">DEVICES</a>
         <!-- Modal 1-->
         <div id="modal1" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="close" onclick="closeModal()">&times;</span>
-                    <h2>INSTRUMENT</h2>
-                    <hr style="border: 0.5px solid white;"/>
+                    <h2>DEVICES</h2>
+                    <hr style="border: 0.5px solid white; width: 100%;"/>
                 </div>
                 <div class="modal-body">
                     <div id="container" class="cf">
@@ -43,24 +43,23 @@
                     <div class="space"></div>
                 </div>
                 <div class="modal-footer">
-                    <hr style="border: 0.5px solid white;"/>
+                    <hr style="border: 0.5px solid white; width: 100%;"/>
                     <button onclick="location.href='index.html'" style="padding:6px; margin-bottom:5px">Apply Changes</button><br>
                 </div>
             </div>
         </div>
         
-        <a onclick="openModal2()" href="#">COLOR</a>
+        <a onclick="openModal2()" href="#">COLORS</a>
         <!-- Modal 2-->
         <div id="modal2" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="close" onclick="closeModal()">&times;</span>
-                    <h2>COLOR</h2>
-                    <hr style="border: 0.5px solid white;"/>
+                    <h2>COLORS</h2>
+                    <hr style="border: 0.5px solid white; width: 100%;"/>
                 </div>
                 <div class="modal-body">
-                    <h3 style="text-align: center">CLICK ON A COLOR TO CUSTOMIZE IT OR CHOOSE FROM A PRESET</h3>
                     <span class="column1">
                         C -<br>
                         C#/Db -<br>
@@ -125,11 +124,13 @@
                         <button onclick="transposeColors('down')" style="padding-left:15px; padding-right:15px; padding-top:6px; padding-bottom: 6px">-</button>
                         <span id="transposeValue">0</span>
                         <button onclick="transposeColors('up')" style="padding-left:15px; padding-right:15px; padding-top:6px; padding-bottom: 6px">+</button>
+                        <div class="space"></div>
+                        Randomize Colors:
+                        <button id="randomizeColors" onclick="randomizeColors()" style="padding:6px;">Randomize</button>
                     </span>
                 </div>
                 <div class="modal-footer">
-                    <hr style="border: 0.5px solid white;"/>
-                    <button id="resetColors" onclick="randomizeColors()" style="padding:6px; margin-right:210px;">Randomize</button>
+                    <hr style="border: 0.5px solid white; width: 100%;"/>
                     <button id="applyColors" onclick="applyColors()" style="padding:6px; margin-bottom:5px">Apply Changes</button><br>
                 </div>
             </div>
@@ -143,7 +144,7 @@
                 <div class="modal-header">
                     <span class="close" onclick="closeModal()">&times;</span>
                     <h2>STYLE</h2>
-                    <hr style="border: 0.5px solid white;"/>
+                    <hr style="border: 0.5px solid white; width: 100%;"/>
                 </div>
                 <div class="modal-body">
                     <h3>SIZE:</h3>
@@ -155,6 +156,12 @@
                     <div class="space"></div>
                     <h3>FADE TIME:</h3>
                     <div class="space"></div>
+                    <h3>STARTING OPACITY:</h3>
+                    <div class="space"></div>
+                </div>
+                <div class="modal-footer">
+                    <hr style="border: 0.5px solid white; width: 100%;"/>
+                    <button id="applyColors" onclick="applyColors()" style="padding:6px; margin-bottom:5px">Apply Changes</button><br>
                 </div>
             </div>
         </div>

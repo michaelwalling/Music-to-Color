@@ -89,6 +89,8 @@ var colorC ="#ff0000",
     colorB ="#0000fe";
 
 function randomizeColors() {
+    tranNum = 0;
+    tranValue.innerHTML = tranNum;
     var randColorC  = Math.floor(Math.random()*16777215).toString(16);
     var randColorDb = Math.floor(Math.random()*16777215).toString(16);
     var randColorD  = Math.floor(Math.random()*16777215).toString(16);
