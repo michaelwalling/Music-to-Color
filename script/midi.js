@@ -67,3 +67,12 @@ function noteOffCallback(note, velocity) {
     noteInfo[note][8] = true;
     fadeOut(note);
 }
+
+function noteName(num) {
+    var noteString = new Array("C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B");
+    var octave = Math.floor((num / 12) - 1);
+    var noteIndex = (num % 12);
+    var note = noteString[noteIndex];
+    var noteName = note + octave;
+    return noteName;
+}

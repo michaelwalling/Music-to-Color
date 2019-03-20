@@ -11,9 +11,11 @@
     <script src="../script/midi.js"></script>
     <script src="../script/listDevices.js"></script>
     <script src="../script/jscolor.js"></script>
+    <script src="../script/nouislider.js"></script>
     
     <link rel="stylesheet" type="text/css" href="../style/main.css">
     <link rel="stylesheet" type="text/css" href="../style/modal.css">
+    <link rel="stylesheet" type="text/css" href="../style/nouislider.css">
     
 </head>
 <body>
@@ -136,32 +138,49 @@
             </div>
         </div>
         
-        <a onclick="openModal3()" href="#">STYLE</a>
+        <a onclick="openModal3()" href="#">SETTINGS</a>
         <!-- Modal 3-->
         <div id="modal3" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="close" onclick="closeModal()">&times;</span>
-                    <h2>STYLE</h2>
+                    <h2>SETTINGS</h2>
                     <hr style="border: 0.5px solid white; width: 100%;"/>
                 </div>
                 <div class="modal-body">
-                    <h3>SIZE:</h3>
-                    <span></span>
-                    <div class="space"></div>
-                    <h3>RANGE:</h3>
-                    <div class="space"></div>
-                    <h3>VELOCITY RATIO:</h3>
-                    <div class="space"></div>
-                    <h3>FADE TIME:</h3>
-                    <div class="space"></div>
-                    <h3>STARTING OPACITY:</h3>
-                    <div class="space"></div>
+                    <span class="stylecolumn1">
+                        <h3>RADIUS SIZE:</h3>
+                        <div class="space"></div>
+                        <h3>STARTING OPACITY:</h3>
+                        <div class="space"></div>
+                        <h3>VELOCITY/SIZE RATIO:</h3>
+                        <div class="space"></div>
+                        <h3>NOTE RANGE:</h3>
+                        <div class="space"></div>
+                        <h3>FADE TIME:</h3>
+                        <div class="space"></div>
+                    </span>
+                    <span class="stylecolumn2">
+                        <div id="radiusSlider"></div>
+                        <span id="radiusSliderVal" style="float: left;"></span>
+                        
+                        <div id="alphaSlider" style="margin-top: 37px"></div>
+                        <span id="alphaSliderVal" style="float: left;"></span>
+                        
+                        <div id="velRatioSlider" style="margin-top: 37px"></div>
+                        <span id="velRatioSliderVal" style="float: left;"></span>
+                        
+                        <div id="rangeSlider" style="margin-top: 37px"></div>
+                        <span id="rangeSliderMin" style="float: left;"></span>
+                        <span id="rangeSliderMax" style="float: right;"></span>
+                        
+                    </span>
                 </div>
                 <div class="modal-footer">
                     <hr style="border: 0.5px solid white; width: 100%;"/>
-                    <button id="applyColors" onclick="applyColors()" style="padding:6px; margin-bottom:5px">Apply Changes</button><br>
+                    <button id="applySettings" onclick="restoreSettings()" style="padding:6px; margin-right:50px">Restore Defaults</button>
+                    <button id="applySettings" onclick="applySettings()" style="padding:6px; margin-bottom:5px">Apply Changes</button>
                 </div>
             </div>
         </div>

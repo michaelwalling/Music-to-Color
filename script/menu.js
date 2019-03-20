@@ -387,3 +387,105 @@ document.getElementById("colorPresets").onchange = function() {
             break;
    }
 };
+
+
+//Radius Slider
+var radiusSlider = document.getElementById('radiusSlider');
+var radiusSliderVal = document.getElementById('radiusSliderVal');
+noUiSlider.create(radiusSlider, {
+    start: 250,
+    step: 1,
+    connect: [true, false],
+    range: {
+        'min': 10,
+        'max': 500
+    }
+});
+radiusSlider.noUiSlider.on('update', function (values, handle) {
+    radiusSliderVal.innerHTML = parseInt(values[handle]);
+});
+
+
+//Alpha Slider
+var alphaSlider = document.getElementById('alphaSlider');
+var alphaSliderVal = document.getElementById('alphaSliderVal');
+noUiSlider.create(alphaSlider, {
+    start: 80,
+    step: 1,
+    connect: [true, false],
+    range: {
+        'min': 10,
+        'max': 100
+    }
+});
+alphaSlider.noUiSlider.on('update', function (values, handle) {
+    alphaSliderVal.innerHTML = parseInt(values[handle]) + "%";
+});
+
+
+//Velocity-Size Ratio Slider
+var velRatioSlider = document.getElementById('velRatioSlider');
+var velRatioSliderVal = document.getElementById('velRatioSliderVal');
+noUiSlider.create(velRatioSlider, {
+    start: 2,
+    step: 1,
+    connect: [true, false],
+    range: {
+        'min': 0,
+        'max': 5
+    }
+});
+velRatioSlider.noUiSlider.on('update', function (values, handle) {
+    velRatioSliderVal.innerHTML = "1:" + parseInt(values[handle]);
+});
+
+
+//Range Slider
+var rangeSlider = document.getElementById('rangeSlider');
+var rangeSliderMin = document.getElementById('rangeSliderMin');
+var rangeSliderMax = document.getElementById('rangeSliderMax');
+noUiSlider.create(rangeSlider, {
+    start: [36, 84],
+    step: 1,
+    margin: 12,
+    behaviour: 'drag',
+    connect: true,
+    range: {
+        'min': 0,
+        'max': 128
+    }
+});
+rangeSlider.noUiSlider.on('update', function (values, handle) {
+    if (handle) {
+        var max = noteName(parseInt(values[handle]));
+        rangeSliderMax.innerHTML = max;
+    } else {
+        var min = noteName(parseInt(values[handle]));
+        rangeSliderMin.innerHTML = min;
+    }
+});
+
+
+//Set Default Settings
+var radialRadius = 250,
+    initAlpha = 0.8,
+    velRatio = 2,
+    minRange = 36,
+    maxRange = 84;
+
+
+function applySettings() {
+    radialRadius = parseInt(radiusSlider.noUiSlider.get()); //Radius 
+    initAlpha = parseInt(alphaSlider.noUiSlider.get()) / 100; //Initial Alpha
+    velRatio = parseInt(velRatioSlider.noUiSlider.get()); //Velocity-Size Ratio
+    var rangeArray = rangeSlider.noUiSlider.get(); //Range
+    minRange = parseInt(rangeArray[0]);
+    maxRange = parseInt(rangeArray[1]);
+}
+
+function restoreSettings() {
+    radiusSlider.noUiSlider.reset();
+    alphaSlider.noUiSlider.reset();
+    velRatioSlider.noUiSlider.reset();
+    rangeSlider.noUiSlider.reset();
+}

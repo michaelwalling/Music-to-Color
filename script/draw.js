@@ -102,10 +102,10 @@ function setNoteInfo(note, velocity) {
     
     //xValue Mapping:
     //xValue = (note-lowestnote)/(highestnote-lowestnote) * canvasWidth
-    var xValue = (note-36)/(84-36) * canvas.width;
+    var xValue = (note-minRange)/(maxRange-minRange) * canvas.width;
     //Radial
-    var x0=xValue, y0=canvas.height/2, r0=10, x1=xValue, y1=canvas.height/2, r1=300+(velocity*2);
-    var ga = 0.7;   //initial global alpha
+    var x0=xValue, y0=canvas.height/2, r0=10, x1=xValue, y1=canvas.height/2, r1=radialRadius+(velocity*velRatio);
+    var ga = initAlpha;   //initial global alpha
     var fade = false;
     
     noteInfo[note] = [x0,y0,r0,x1,y1,r1,noteColor,ga,fade];
