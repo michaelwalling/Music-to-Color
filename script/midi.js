@@ -64,8 +64,13 @@ function noteOff(note, velocity) {
 }
 
 function noteOffCallback(note, velocity) {
-    noteInfo[note][8] = true;
-    fadeOut(note);
+    if (!noteFade) {
+        noteActive[note] = false;
+    }
+    else {
+        noteInfo[note][8] = true;
+        fadeOut(note);
+    }
 }
 
 function noteName(num) {

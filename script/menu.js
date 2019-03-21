@@ -388,21 +388,50 @@ document.getElementById("colorPresets").onchange = function() {
    }
 };
 
+//Inner Radius Slider
+var inRadiusSlider = document.getElementById('inRadiusSlider');
+var inRadiusSliderVal = document.getElementById('inRadiusSliderVal');
+noUiSlider.create(inRadiusSlider, {
+    start: 10,
+    step: 1,
+    connect: [true, false],
+    range: {
+        'min': 0,
+        'max': 499
+    }
+});
+inRadiusSlider.noUiSlider.on('update', function (values, handle) {
+    inRadiusSliderVal.innerHTML = parseInt(values[handle]);
+});
+inRadiusSlider.noUiSlider.on('set', function (values, handle) {
+    var inVal = parseInt(values[handle]);
+    var outVal = parseInt(outRadiusSlider.noUiSlider.get());
+    if (inVal >= outVal) {
+        inRadiusSlider.noUiSlider.set(outVal-1);
+    }
+});
 
-//Radius Slider
-var radiusSlider = document.getElementById('radiusSlider');
-var radiusSliderVal = document.getElementById('radiusSliderVal');
-noUiSlider.create(radiusSlider, {
+//Outer Radius Slider
+var outRadiusSlider = document.getElementById('outRadiusSlider');
+var outRadiusSliderVal = document.getElementById('outRadiusSliderVal');
+noUiSlider.create(outRadiusSlider, {
     start: 250,
     step: 1,
     connect: [true, false],
     range: {
-        'min': 10,
+        'min': 1,
         'max': 500
     }
 });
-radiusSlider.noUiSlider.on('update', function (values, handle) {
-    radiusSliderVal.innerHTML = parseInt(values[handle]);
+outRadiusSlider.noUiSlider.on('update', function (values, handle) {
+    outRadiusSliderVal.innerHTML = parseInt(values[handle]);
+});
+outRadiusSlider.noUiSlider.on('set', function (values, handle) {
+    var inVal = parseInt(inRadiusSlider.noUiSlider.get()); 
+    var outVal = parseInt(values[handle]);
+    if (outVal <= inVal) {
+        outRadiusSlider.noUiSlider.set(inVal+1);
+    }
 });
 
 
@@ -421,6 +450,15 @@ noUiSlider.create(alphaSlider, {
 alphaSlider.noUiSlider.on('update', function (values, handle) {
     alphaSliderVal.innerHTML = parseInt(values[handle]) + "%";
 });
+alphaSlider.noUiSlider.on('slide', function (values, handle) {
+    var sec = (parseInt(fadeSlider.noUiSlider.get()) / 10) * (parseInt(values[handle]) / 100);
+    fadeSliderVal.innerHTML = (Math.floor(sec * 100) / 100) + " sec";
+});
+alphaSlider.noUiSlider.on('set', function (values, handle) {
+    var sec = (parseInt(fadeSlider.noUiSlider.get()) / 10) * (parseInt(values[handle]) / 100);
+    fadeSliderVal.innerHTML = (Math.floor(sec * 100) / 100) + " sec";
+});
+
 
 
 //Velocity-Size Ratio Slider
@@ -466,26 +504,71 @@ rangeSlider.noUiSlider.on('update', function (values, handle) {
 });
 
 
-//Set Default Settings
-var radialRadius = 250,
-    initAlpha = 0.8,
-    velRatio = 2,
-    minRange = 36,
-    maxRange = 84;
+//Fade Slider
+var fadeSlider = document.getElementById('fadeSlider');
+var fadeSliderVal = document.getElementById('fadeSliderVal');
+var fadeCheckbox = document.getElementById('fadeCheckbox');
+noUiSlider.create(fadeSlider, {
+    start: 50,
+    step: 1,
+    connect: [true, false],
+    range: {
+        'min': 1,
+        'max': 100
+    }
+});
+fadeSlider.noUiSlider.on('update', function (values, handle) {
+    var sec = (parseInt(values[handle]) / 10) * (parseInt(alphaSlider.noUiSlider.get()) / 100);
+    fadeSliderVal.innerHTML = (Math.floor(sec * 100) / 100) + " sec";
+});
+fadeCheckbox.addEventListener('click', function () {
+    toggle.call(this, fadeSlider);
+});
+
+function toggle(element) {
+
+    // If the checkbox is checked, disabled the slider.
+    // Otherwise, re-enable it.
+    if (this.checked) {
+        element.setAttribute('disabled', true);
+    } else {
+        element.removeAttribute('disabled');
+    }
+}
 
 
 function applySettings() {
-    radialRadius = parseInt(radiusSlider.noUiSlider.get()); //Radius 
+    inRadRadius = parseInt(inRadiusSlider.noUiSlider.get()); //Inner Radius 
+    outRadRadius = parseInt(outRadiusSlider.noUiSlider.get()); //Outer Radius 
     initAlpha = parseInt(alphaSlider.noUiSlider.get()) / 100; //Initial Alpha
     velRatio = parseInt(velRatioSlider.noUiSlider.get()); //Velocity-Size Ratio
+    
     var rangeArray = rangeSlider.noUiSlider.get(); //Range
-    minRange = parseInt(rangeArray[0]);
-    maxRange = parseInt(rangeArray[1]);
+        minRange = parseInt(rangeArray[0]);
+        maxRange = parseInt(rangeArray[1]);
+    
+    (fadeCheckbox.checked) ? noteFade=false : noteFade=true;
+    fadeTime = parseInt(fadeSlider.noUiSlider.get()); //Fade
 }
 
 function restoreSettings() {
-    radiusSlider.noUiSlider.reset();
+    inRadiusSlider.noUiSlider.reset();
+    outRadiusSlider.noUiSlider.reset();
     alphaSlider.noUiSlider.reset();
     velRatioSlider.noUiSlider.reset();
     rangeSlider.noUiSlider.reset();
+    fadeSlider.noUiSlider.reset();
+    document.getElementById("fadeCheckbox").checked = false;
+    fadeSlider.removeAttribute('disabled');
 }
+
+//Set Default Settings
+var inRadRadius = 10,
+    outRadRadius = 250,
+    initAlpha = 0.8,
+    velRatio = 2,
+    minRange = 36,
+    maxRange = 84,
+    fadeTime = 50,
+    noteFade = true;
+    

@@ -7,7 +7,7 @@ const draw = () => {
     c.clearRect(0, 0, canvas.width, canvas.height);
     
     //if notes are active between min & max range, draw them
-    for (i = 25; i < 85; i++) {
+    for (i = minRange; i < maxRange+1; i++) {
         if (noteActive[i]) {
             drawRadial(i);
         }
@@ -41,16 +41,18 @@ function drawRadial(note) {
     }
 
 function fadeOut(note) {
-    var inter = setInterval(frame, 50);
+    var inter = setInterval(frame, fadeTime);
     function frame() {
         if (noteInfo[note][8] && noteInfo[note][7] > 0.01 && noteActive[note]) {
-            noteInfo[note][7] -= 0.1;
+            noteInfo[note][7] -= 0.01;
+            noteInfo[note][7] = Math.floor(noteInfo[note][7] * 100) / 100;
         }
         else {
             clearInterval(inter);
         }
     }
-    if (noteInfo[note][7] < 0.01) {
+    if (noteInfo[note][7] < 0.05) {
+        noteInfo[note][7] = 0.0;
         noteActive[note] = false;
     }
 }
@@ -104,7 +106,7 @@ function setNoteInfo(note, velocity) {
     //xValue = (note-lowestnote)/(highestnote-lowestnote) * canvasWidth
     var xValue = (note-minRange)/(maxRange-minRange) * canvas.width;
     //Radial
-    var x0=xValue, y0=canvas.height/2, r0=10, x1=xValue, y1=canvas.height/2, r1=radialRadius+(velocity*velRatio);
+    var x0=xValue, y0=canvas.height/2, r0=inRadRadius, x1=xValue, y1=canvas.height/2, r1=outRadRadius+(velocity*velRatio);
     var ga = initAlpha;   //initial global alpha
     var fade = false;
     
