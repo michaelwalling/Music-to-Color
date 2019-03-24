@@ -47,11 +47,15 @@ function getMIDIMessage(msg) {
     }
 }
 
-var noteInfo = new Array(108);
-var noteActive = new Array(108); //Create noteActive array and initialize all to false
-for (i=0; i<109; i++) {
+var noteInfo = new Array(127);
+for (i=0; i<128; i++) {
+    noteInfo[i] = [0,0,0,0,0,0,'noteColor',0.0,false];
+}
+var noteActive = new Array(127); //Create noteActive array and initialize all to false
+for (i=0; i<128; i++) {
     noteActive[i] = false;
 }
+
 
 // Function to handle noteOn messages (ie. key is pressed)
 function noteOn(note, velocity) {

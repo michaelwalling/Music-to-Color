@@ -132,6 +132,7 @@ function applyColors() {
     colorB  = '#'+document.getElementById("selectColorB").value;
 }
 
+//Transpose Colors
 var tranNum = 0;
 var tranValue = document.getElementById('transposeValue');
 function transposeColors(direction) {
@@ -388,11 +389,21 @@ document.getElementById("colorPresets").onchange = function() {
    }
 };
 
+//Set defaults so apply doesn't have to be pressed first
+var inRadRadius = 1,
+    outRadRadius = 250,
+    initAlpha = 0.75,
+    velRatio = 1.5,
+    minRange = 36,
+    maxRange = 84,
+    fadeTime = 10,
+    noteFade = true;
+
 //Inner Radius Slider
 var inRadiusSlider = document.getElementById('inRadiusSlider');
 var inRadiusSliderVal = document.getElementById('inRadiusSliderVal');
 noUiSlider.create(inRadiusSlider, {
-    start: 10,
+    start: inRadRadius,
     step: 1,
     connect: [true, false],
     range: {
@@ -415,7 +426,7 @@ inRadiusSlider.noUiSlider.on('set', function (values, handle) {
 var outRadiusSlider = document.getElementById('outRadiusSlider');
 var outRadiusSliderVal = document.getElementById('outRadiusSliderVal');
 noUiSlider.create(outRadiusSlider, {
-    start: 250,
+    start: outRadRadius,
     step: 1,
     connect: [true, false],
     range: {
@@ -439,7 +450,7 @@ outRadiusSlider.noUiSlider.on('set', function (values, handle) {
 var alphaSlider = document.getElementById('alphaSlider');
 var alphaSliderVal = document.getElementById('alphaSliderVal');
 noUiSlider.create(alphaSlider, {
-    start: 80,
+    start: initAlpha*100,
     step: 1,
     connect: [true, false],
     range: {
@@ -450,6 +461,7 @@ noUiSlider.create(alphaSlider, {
 alphaSlider.noUiSlider.on('update', function (values, handle) {
     alphaSliderVal.innerHTML = parseInt(values[handle]) + "%";
 });
+//Change fade slider value
 alphaSlider.noUiSlider.on('slide', function (values, handle) {
     var sec = (parseInt(fadeSlider.noUiSlider.get()) / 10) * (parseInt(values[handle]) / 100);
     fadeSliderVal.innerHTML = (Math.floor(sec * 100) / 100) + " sec";
@@ -465,16 +477,16 @@ alphaSlider.noUiSlider.on('set', function (values, handle) {
 var velRatioSlider = document.getElementById('velRatioSlider');
 var velRatioSliderVal = document.getElementById('velRatioSliderVal');
 noUiSlider.create(velRatioSlider, {
-    start: 2,
-    step: 1,
+    start: velRatio,
+    step: 0.5,
     connect: [true, false],
     range: {
         'min': 0,
-        'max': 5
+        'max': 4
     }
 });
 velRatioSlider.noUiSlider.on('update', function (values, handle) {
-    velRatioSliderVal.innerHTML = "1:" + parseInt(values[handle]);
+    velRatioSliderVal.innerHTML = "1:" + parseFloat(values[handle]);
 });
 
 
@@ -483,7 +495,7 @@ var rangeSlider = document.getElementById('rangeSlider');
 var rangeSliderMin = document.getElementById('rangeSliderMin');
 var rangeSliderMax = document.getElementById('rangeSliderMax');
 noUiSlider.create(rangeSlider, {
-    start: [36, 84],
+    start: [minRange, maxRange],
     step: 1,
     margin: 12,
     behaviour: 'drag',
@@ -509,7 +521,7 @@ var fadeSlider = document.getElementById('fadeSlider');
 var fadeSliderVal = document.getElementById('fadeSliderVal');
 var fadeCheckbox = document.getElementById('fadeCheckbox');
 noUiSlider.create(fadeSlider, {
-    start: 50,
+    start: fadeTime,
     step: 1,
     connect: [true, false],
     range: {
@@ -560,15 +572,4 @@ function restoreSettings() {
     fadeSlider.noUiSlider.reset();
     document.getElementById("fadeCheckbox").checked = false;
     fadeSlider.removeAttribute('disabled');
-}
-
-//Set Default Settings
-var inRadRadius = 10,
-    outRadRadius = 250,
-    initAlpha = 0.8,
-    velRatio = 2,
-    minRange = 36,
-    maxRange = 84,
-    fadeTime = 50,
-    noteFade = true;
-    
+}    

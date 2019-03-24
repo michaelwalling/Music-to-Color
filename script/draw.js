@@ -45,15 +45,12 @@ function fadeOut(note) {
     function frame() {
         if (noteInfo[note][8] && noteInfo[note][7] > 0.01 && noteActive[note]) {
             noteInfo[note][7] -= 0.01;
-            noteInfo[note][7] = Math.floor(noteInfo[note][7] * 100) / 100;
         }
-        else {
+        else if (noteInfo[note][7] < 0.01) {
+            noteActive[note] = false;
+            noteInfo[note][7] = 0.0;
             clearInterval(inter);
         }
-    }
-    if (noteInfo[note][7] < 0.05) {
-        noteInfo[note][7] = 0.0;
-        noteActive[note] = false;
     }
 }
 
