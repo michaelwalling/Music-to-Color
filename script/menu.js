@@ -390,14 +390,16 @@ document.getElementById("colorPresets").onchange = function() {
 };
 
 //Set defaults so apply doesn't have to be pressed first
-var inRadRadius = 1,
+var inRadRadius = 0,
     outRadRadius = 250,
     initAlpha = 0.75,
     velRatio = 1.5,
     minRange = 36,
     maxRange = 84,
     fadeTime = 10,
-    noteFade = true;
+    noteFade = true,
+    pattern = 0;
+    document.getElementById("patternHorizontal").checked = true;
 
 //Inner Radius Slider
 var inRadiusSlider = document.getElementById('inRadiusSlider');
@@ -561,6 +563,9 @@ function applySettings() {
     
     (fadeCheckbox.checked) ? noteFade=false : noteFade=true;
     fadeTime = parseInt(fadeSlider.noUiSlider.get()); //Fade
+    
+    (patternHorizontal.checked) ? pattern=0 : pattern=1; //Drawing Pattern
+    
 }
 
 function restoreSettings() {
@@ -572,4 +577,5 @@ function restoreSettings() {
     fadeSlider.noUiSlider.reset();
     document.getElementById("fadeCheckbox").checked = false;
     fadeSlider.removeAttribute('disabled');
+    document.getElementById("patternHorizontal").checked = true;
 }    
