@@ -34,12 +34,11 @@ function drawRadial(note) {
 
         //Rect
         var x=x0-r1, y=y0-r1, w=r1*2, h=r1*2;
-        }
 
         c.fillStyle = radial;
         c.globalAlpha = ga;
         c.fillRect(x,y,w,h);
-    }
+}
 
 function fadeOut(note) {
     var inter = setInterval(frame, fadeTime);
