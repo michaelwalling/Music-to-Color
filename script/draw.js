@@ -96,21 +96,27 @@ function setNoteInfo(note, velocity) {
             var noteColor = colorB;
             break;        
     }
-    var randY = Math.floor(Math.random() * canvas.height+1);
-    var randX = Math.floor(Math.random() * canvas.width+1); 
     
-    
-    //xValue Mapping:
-    //xValue = (note-lowestnote)/(highestnote-lowestnote) * canvasWidth
-    var xValue = (note-minRange)/(maxRange-minRange) * canvas.width;
     //Radial
     switch (pattern) {
+        //Horizontal
         case 0:
+            //xValue Mapping:
+            //xValue = (note-lowestnote)/(highestnote-lowestnote) * canvas length
+            var xValue = (note-minRange)/(maxRange-minRange) * canvas.width;
             var x0=xValue, y0=canvas.height/2, r0=inRadRadius, x1=xValue, y1=canvas.height/2, r1=outRadRadius+(velocity*velRatio);
             break;
+        //Vertical
         case 1:
+            var yValue = (note-minRange)/(maxRange-minRange) * canvas.height;
+            var x0=canvas.width/2, y0=yValue, r0=inRadRadius, x1=canvas.width/2, y1=yValue, r1=outRadRadius+(velocity*velRatio);
+            break;
+        //Random
+        case 2:
+            var randY = Math.floor(Math.random() * canvas.height+1);
+            var randX = Math.floor(Math.random() * canvas.width+1); 
             var x0=randX, y0=randY, r0=inRadRadius, x1=randX, y1=randY, r1=outRadRadius+(velocity*velRatio);
-            console.log("x0="+x0,"y0="+y0,"r0="+r0,"x1="+x1,"y1="+y1,"r1="+r1);
+            //console.log("x0="+x0,"y0="+y0,"r0="+r0,"x1="+x1,"y1="+y1,"r1="+r1);
             break;
     }
     var ga = initAlpha;   //initial global alpha

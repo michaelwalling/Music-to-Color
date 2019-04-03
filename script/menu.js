@@ -75,6 +75,34 @@ window.onclick = function(event) {
     }
 }
 
+// Modal hotkeys
+window.onkeydown = function(event) { openModal(event); }
+function openModal(event) {
+    var key = event.key;
+    modalCheck = true;
+    switch (key) {
+        case "1":
+            modal1.style.display = "block";
+            modal2.style.display = "none";
+            modal3.style.display = "none";
+            break;
+        case "2":
+            modal1.style.display = "none";
+            modal2.style.display = "block";
+            modal3.style.display = "none";
+            break;
+        case "3":
+            modal1.style.display = "none";
+            modal2.style.display = "none";
+            modal3.style.display = "block";
+            break;
+        /*
+        case "4":
+            window.open("info.html","_self");
+        */
+    }
+}
+
 var colorC ="#ff0000",
     colorDb="#cf9bff",
     colorD ="#ffff00",
@@ -561,10 +589,12 @@ function applySettings() {
         minRange = parseInt(rangeArray[0]);
         maxRange = parseInt(rangeArray[1]);
     
-    (fadeCheckbox.checked) ? noteFade=false : noteFade=true;
-    fadeTime = parseInt(fadeSlider.noUiSlider.get()); //Fade
+    (fadeCheckbox.checked) ? noteFade=false : noteFade=true; //Fade
+    fadeTime = parseInt(fadeSlider.noUiSlider.get());
     
-    (patternHorizontal.checked) ? pattern=0 : pattern=1; //Drawing Pattern
+    if (patternHorizontal.checked) { pattern=0; } //Drawing Pattern
+    else if (patternVertical.checked) { pattern=1; }
+    else if (patternRandom.checked) { pattern=2; }
     
 }
 
