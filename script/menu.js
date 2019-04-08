@@ -79,22 +79,48 @@ window.onclick = function(event) {
 window.onkeydown = function(event) { openModal(event); }
 function openModal(event) {
     var key = event.key;
-    modalCheck = true;
     switch (key) {
         case "1":
-            modal1.style.display = "block";
-            modal2.style.display = "none";
-            modal3.style.display = "none";
+            if (modal1.style.display == "block") {
+                modalCheck = false;
+                modal1.style.display = "none";
+                modal2.style.display = "none";
+                modal3.style.display = "none";
+            }
+            else {
+                modalCheck = true;
+                modal1.style.display = "block"
+                modal2.style.display = "none";
+                modal3.style.display = "none";
+            }
             break;
         case "2":
-            modal1.style.display = "none";
-            modal2.style.display = "block";
-            modal3.style.display = "none";
+            if (modal2.style.display == "block") {
+                modalCheck = false;
+                modal1.style.display = "none";
+                modal2.style.display = "none";
+                modal3.style.display = "none";
+            }
+            else {
+                modalCheck = true;
+                modal1.style.display = "none"
+                modal2.style.display = "block";
+                modal3.style.display = "none";
+            }
             break;
         case "3":
-            modal1.style.display = "none";
-            modal2.style.display = "none";
-            modal3.style.display = "block";
+            if (modal3.style.display == "block") {
+                modalCheck = false;
+                modal1.style.display = "none";
+                modal2.style.display = "none";
+                modal3.style.display = "none";
+            }
+            else {
+                modalCheck = true;
+                modal1.style.display = "none"
+                modal2.style.display = "none";
+                modal3.style.display = "block";
+            }
             break;
         /*
         case "4":
@@ -438,7 +464,7 @@ noUiSlider.create(inRadiusSlider, {
     connect: [true, false],
     range: {
         'min': 0,
-        'max': 499
+        'max': 999
     }
 });
 inRadiusSlider.noUiSlider.on('update', function (values, handle) {
@@ -461,7 +487,7 @@ noUiSlider.create(outRadiusSlider, {
     connect: [true, false],
     range: {
         'min': 1,
-        'max': 500
+        'max': 1000
     }
 });
 outRadiusSlider.noUiSlider.on('update', function (values, handle) {
