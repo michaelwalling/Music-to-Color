@@ -59,23 +59,7 @@ function openModal3() {
     modalCheck = true;
 }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal1) {
-        modal1.style.display = "none";
-         modalCheck = false;
-    }
-    if (event.target == modal2) {
-        modal2.style.display = "none";
-         modalCheck = false;
-    }
-    if (event.target == modal3) {
-        modal3.style.display = "none";
-         modalCheck = false;
-    }
-}
-
-// Modal hotkeys
+//MODAL SHORTCUTS
 window.onkeydown = function(event) { openModal(event); }
 function openModal(event) {
     var key = event.key;
@@ -122,12 +106,28 @@ function openModal(event) {
                 modal3.style.display = "block";
             }
             break;
+        case "Escape":
+            modalCheck = false;
+            modal1.style.display = "none";
+            modal2.style.display = "none";
+            modal3.style.display = "none";
+            break;
         /*
         case "4":
             window.open("info.html","_self");
         */
     }
 }
+
+
+
+
+
+
+
+
+
+//COLORS
 
 var colorC ="#ff0000",
     colorDb="#cf9bff",
@@ -184,6 +184,12 @@ function applyColors() {
     colorA  = '#'+document.getElementById("selectColorA").value;
     colorBb = '#'+document.getElementById("selectColorBb").value;
     colorB  = '#'+document.getElementById("selectColorB").value;
+}
+
+function saveColors() {
+    applyColors();
+    modal2.style.display = "none";
+    modalCheck = false;
 }
 
 //Transpose Colors
@@ -443,6 +449,16 @@ document.getElementById("colorPresets").onchange = function() {
    }
 };
 
+
+
+
+
+
+
+
+
+
+//SETTTINGS
 //Set defaults so apply doesn't have to be pressed first
 var inRadRadius = 0,
     outRadRadius = 250,
@@ -634,4 +650,10 @@ function restoreSettings() {
     document.getElementById("fadeCheckbox").checked = false;
     fadeSlider.removeAttribute('disabled');
     document.getElementById("patternHorizontal").checked = true;
-}    
+} 
+
+function saveSettings() {
+    applySettings();
+    modal3.style.display = "none";
+    modalCheck = false;
+}

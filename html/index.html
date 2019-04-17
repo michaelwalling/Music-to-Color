@@ -46,7 +46,8 @@
                 </div>
                 <div class="modal-footer">
                     <hr style="border: 0.5px solid white; width: 100%;"/>
-                    <button onclick="location.href='index.html'" style="padding:6px; margin-bottom:5px">Apply Changes</button><br>
+                    <button id="saveColors" onclick="closeModal()" class="okbtn">OK</button>
+                    <button onclick="location.href='index.html'" class=restorebtn>Refresh Page</button>
                 </div>
             </div>
         </div>
@@ -133,7 +134,8 @@
                 </div>
                 <div class="modal-footer">
                     <hr style="border: 0.5px solid white; width: 100%;"/>
-                    <button id="applyColors" onclick="applyColors()" style="padding:6px; margin-bottom:5px">Apply Changes</button><br>
+                    <button id="saveColors" onclick="saveColors()" class="okbtn">OK</button>
+                    <button id="applyColors" onclick="applyColors()" class="applybtn">Apply</button>
                 </div>
             </div>
         </div>
@@ -194,13 +196,14 @@
                 </div>
                 <div class="modal-footer">
                     <hr style="border: 0.5px solid white; width: 100%;"/>
-                    <button id="applySettings" onclick="restoreSettings()" style="padding:6px; margin-right:50px">Restore Defaults</button>
-                    <button id="applySettings" onclick="applySettings()" style="padding:6px; margin-bottom:5px">Apply Changes</button>
+                    <button id="saveSettings" onclick="saveSettings()" class="okbtn">OK</button>
+                    <button id="applySettings" onclick="applySettings()" class="applybtn">Apply</button>
+                    <button id="restoreSettings" onclick="restoreSettings()" class="restorebtn">Restore Defaults</button>
                 </div>
             </div>
         </div>
         
-        <a href="info.html">INFO</a>
+        <a href="info.html">INFO PAGE</a>
     </div>
     </div>
 

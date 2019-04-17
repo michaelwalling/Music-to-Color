@@ -70,6 +70,13 @@
 .modal-footer {
   margin-bottom: 10px;
   color: white;
+    
+}
+
+.modal-footer:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 #container{
