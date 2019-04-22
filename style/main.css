@@ -64,6 +64,11 @@ button:hover {
     margin-right: 16px;
 }
 
+
+
+
+
+
 /* link settings */
 a:link {
     color: #818181;
@@ -82,6 +87,11 @@ a:hover {
     text-decoration: none;
     transition: 0.3s;
 }
+
+
+
+
+
 
 /* nav menu */
 .overlay {
@@ -123,6 +133,10 @@ hr {
     margin: 1em auto;
     padding: 0;
 }
+
+
+
+
 
 /* Info page style */
 #title {

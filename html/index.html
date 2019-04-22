@@ -203,6 +203,39 @@
             </div>
         </div>
         
+        <a onclick="openModal4()" href="#">HELP</a>
+        <!-- Modal 4-->
+        <div id="modal4" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>HELP</h2>
+                    <hr style="border: 0.5px solid white; width: 100%;"/>
+                </div>
+                <div class="modal-body">
+                    <h3>DEVICES:</h3>
+                    <p>- Lists connected devices based on MIDI connection<br>
+                       - Once connected, each device name, manufacturer, version, and ID will display in green text.</p>
+                    <hr style="border: 0.5px solid white; width: 100%;"/>
+                    <h3>COLORS:</h3>
+                    <p>- Click on each color to change it using a color picker.<br>
+                       <b>COLOR SCALE PRESETS:</b> Choose from a list of color scaled based on historical figures from the past 300<br>years and their own ideas on how the musical scale relates to color.<br>
+                       <b>TRANSPOSE COLORS:</b> Moves each color up or down one pitch in the chromatic scale.<br>
+                       <b>RANDOMIZE:</b> Randomizes each color in the color scale.</p>
+                    <hr style="border: 0.5px solid white; width: 100%;"/>
+                    <h3>SETTINGS:</h3>
+                    <p><b>INNER RADIUS SIZE:</b> How large the radius of the inner circle is drawn. (1-999)<br>
+                       <b>OUTER RADIUS SIZE:</b> How large the radius of the outer circle is drawn. (2-1000)<br>
+                       <b>STARTING OPACITY:</b> The starting transparency of the radial. (10% - 100%) Also effects the fade time.</p>
+                </div>
+                <div class="modal-footer">
+                    <hr style="border: 0.5px solid white; width: 100%;"/>
+                    <button onclick="closeModal()" class="okbtn">OK</button>
+                </div>
+            </div>
+        </div>
+        
         <a href="info.html">INFO PAGE</a>
     </div>
     </div>

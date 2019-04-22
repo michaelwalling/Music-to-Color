@@ -30,6 +30,7 @@ document.onmousemove = readMouseX;
 var modal1 = document.getElementById('modal1');
 var modal2 = document.getElementById('modal2');
 var modal3 = document.getElementById('modal3');
+var modal4 = document.getElementById('modal4');
 
 /* Get the <span> element that closes the modal
 var spanList = document.getElementsByClassName("close");
@@ -43,6 +44,7 @@ function closeModal() {
     modal1.style.display = "none";
     modal2.style.display = "none";
     modal3.style.display = "none";
+    modal4.style.display = "none";
     modalCheck = false;
 }
 // When the user clicks the button, open the modal 
@@ -58,6 +60,10 @@ function openModal3() {
     modal3.style.display = "block";
     modalCheck = true;
 }
+function openModal4() {
+    modal4.style.display = "block";
+    modalCheck = true;
+}
 
 //MODAL SHORTCUTS
 window.onkeydown = function(event) { openModal(event); }
@@ -70,12 +76,14 @@ function openModal(event) {
                 modal1.style.display = "none";
                 modal2.style.display = "none";
                 modal3.style.display = "none";
+                modal4.style.display = "none";
             }
             else {
                 modalCheck = true;
                 modal1.style.display = "block"
                 modal2.style.display = "none";
                 modal3.style.display = "none";
+                modal4.style.display = "none";
             }
             break;
         case "2":
@@ -84,12 +92,14 @@ function openModal(event) {
                 modal1.style.display = "none";
                 modal2.style.display = "none";
                 modal3.style.display = "none";
+                modal4.style.display = "none";
             }
             else {
                 modalCheck = true;
                 modal1.style.display = "none"
                 modal2.style.display = "block";
                 modal3.style.display = "none";
+                modal4.style.display = "none";
             }
             break;
         case "3":
@@ -98,12 +108,46 @@ function openModal(event) {
                 modal1.style.display = "none";
                 modal2.style.display = "none";
                 modal3.style.display = "none";
+                modal4.style.display = "none";
             }
             else {
                 modalCheck = true;
                 modal1.style.display = "none"
                 modal2.style.display = "none";
                 modal3.style.display = "block";
+                modal4.style.display = "none";
+            }
+            break;
+        case "4":
+            if (modal4.style.display == "block") {
+                modalCheck = false;
+                modal1.style.display = "none";
+                modal2.style.display = "none";
+                modal3.style.display = "none";
+                modal4.style.display = "none";
+            }
+            else {
+                modalCheck = true;
+                modal1.style.display = "none"
+                modal2.style.display = "none";
+                modal3.style.display = "none";
+                modal4.style.display = "block";
+            }
+            break;
+        case "h":
+            if (modal4.style.display == "block") {
+                modalCheck = false;
+                modal1.style.display = "none";
+                modal2.style.display = "none";
+                modal3.style.display = "none";
+                modal4.style.display = "none";
+            }
+            else {
+                modalCheck = true;
+                modal1.style.display = "none"
+                modal2.style.display = "none";
+                modal3.style.display = "none";
+                modal4.style.display = "block";
             }
             break;
         case "Escape":
@@ -111,6 +155,7 @@ function openModal(event) {
             modal1.style.display = "none";
             modal2.style.display = "none";
             modal3.style.display = "none";
+            modal4.style.display = "none";
             break;
         /*
         case "4":
