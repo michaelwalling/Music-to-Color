@@ -70,6 +70,7 @@ window.onkeydown = function(event) { openModal(event); }
 function openModal(event) {
     var key = event.key;
     switch (key) {
+        case "d":
         case "1":
             if (modal1.style.display == "block") {
                 modalCheck = false;
@@ -86,6 +87,7 @@ function openModal(event) {
                 modal4.style.display = "none";
             }
             break;
+        case "c":
         case "2":
             if (modal2.style.display == "block") {
                 modalCheck = false;
@@ -102,6 +104,7 @@ function openModal(event) {
                 modal4.style.display = "none";
             }
             break;
+        case "s":
         case "3":
             if (modal3.style.display == "block") {
                 modalCheck = false;
@@ -118,23 +121,8 @@ function openModal(event) {
                 modal4.style.display = "none";
             }
             break;
-        case "4":
-            if (modal4.style.display == "block") {
-                modalCheck = false;
-                modal1.style.display = "none";
-                modal2.style.display = "none";
-                modal3.style.display = "none";
-                modal4.style.display = "none";
-            }
-            else {
-                modalCheck = true;
-                modal1.style.display = "none"
-                modal2.style.display = "none";
-                modal3.style.display = "none";
-                modal4.style.display = "block";
-            }
-            break;
         case "h":
+        case "4":
             if (modal4.style.display == "block") {
                 modalCheck = false;
                 modal1.style.display = "none";
