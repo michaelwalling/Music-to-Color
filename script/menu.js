@@ -161,7 +161,34 @@ function openModal(event) {
 
 
 //COLORS
-
+const red = 'FF0000',
+      redorange = 'FF4000',
+      crimson = '990000',
+      darkred = '8B0000',
+      firebrick = 'B22222',
+      orange = 'FF7F00',
+      yelloworange = 'FFC000',
+      yellow = 'FFFF00',
+      yellowwhite = 'F9ED68',
+      yellowgreen = '7FFF00',
+      green = '#008000',
+      bluegreen = '20B2AA',
+      darkturquoise = '00CED1',
+      blue = '0000FF',
+      cyan = '00FFFF',
+      dodgerblue = '1E90FF',
+      darkslateblue = '483D8B',
+      indigo = '4B0082',
+      violet = 'FF1493',
+      redviolet = 'C71585',
+      mediumvioletred = 'C71585',
+      purple = '800080',
+      white = 'FFFFFF',
+      brown = 'A52A2A',
+      slategray = '708090',
+      black = '000000';
+    
+    
 var colorC ="#ff0000",
     colorDb="#cf9bff",
     colorD ="#ffff00",
@@ -283,7 +310,7 @@ document.getElementById("colorPresets").onchange = function() {
     tranValue.innerHTML = tranNum;
     var preset = document.getElementById("colorPresets").value;
     switch (preset) {
-        case "default":
+        case "custom":
             document.getElementById('buttonColorC').jscolor.fromString('ff0000');
             document.getElementById('buttonColorDb').jscolor.fromString('cf9bff');
             document.getElementById('buttonColorD').jscolor.fromString('ffff00');
@@ -298,186 +325,186 @@ document.getElementById("colorPresets").onchange = function() {
             document.getElementById('buttonColorB').jscolor.fromString('0000fe');
             break;
         case "newton":
-            document.getElementById('buttonColorC').jscolor.fromString('fa0b0c');
-            document.getElementById('buttonColorDb').jscolor.fromString('ffffff');
-            document.getElementById('buttonColorD').jscolor.fromString('f88010');
-            document.getElementById('buttonColorEb').jscolor.fromString('ffffff');
-            document.getElementById('buttonColorE').jscolor.fromString('f4f33b');
-            document.getElementById('buttonColorF').jscolor.fromString('139032');
-            document.getElementById('buttonColorGb').jscolor.fromString('ffffff');
-            document.getElementById('buttonColorG').jscolor.fromString('1b0d82');
-            document.getElementById('buttonColorAb').jscolor.fromString('ffffff');
-            document.getElementById('buttonColorA').jscolor.fromString('7f087c');
-            document.getElementById('buttonColorBb').jscolor.fromString('ffffff');
-            document.getElementById('buttonColorB').jscolor.fromString('d71386');
+            document.getElementById('buttonColorC').jscolor.fromString(red);
+            document.getElementById('buttonColorDb').jscolor.fromString(black);
+            document.getElementById('buttonColorD').jscolor.fromString(orange);
+            document.getElementById('buttonColorEb').jscolor.fromString(black);
+            document.getElementById('buttonColorE').jscolor.fromString(yellow);
+            document.getElementById('buttonColorF').jscolor.fromString(green);
+            document.getElementById('buttonColorGb').jscolor.fromString(black);
+            document.getElementById('buttonColorG').jscolor.fromString(blue);
+            document.getElementById('buttonColorAb').jscolor.fromString(black);
+            document.getElementById('buttonColorA').jscolor.fromString(indigo);
+            document.getElementById('buttonColorBb').jscolor.fromString(black);
+            document.getElementById('buttonColorB').jscolor.fromString(violet);
             break;
         case "castel":
-            document.getElementById('buttonColorC').jscolor.fromString('1c0d82');
-            document.getElementById('buttonColorDb').jscolor.fromString('1b9081');
-            document.getElementById('buttonColorD').jscolor.fromString('149033');
-            document.getElementById('buttonColorEb').jscolor.fromString('709225');
-            document.getElementById('buttonColorE').jscolor.fromString('f5f43c');
-            document.getElementById('buttonColorF').jscolor.fromString('f5d23b');
-            document.getElementById('buttonColorGb').jscolor.fromString('f88010');
-            document.getElementById('buttonColorG').jscolor.fromString('f90b0c');
-            document.getElementById('buttonColorAb').jscolor.fromString('a00b09');
-            document.getElementById('buttonColorA').jscolor.fromString('d71385');
-            document.getElementById('buttonColorBb').jscolor.fromString('4b0e7d');
-            document.getElementById('buttonColorB').jscolor.fromString('7f087c');
+            document.getElementById('buttonColorC').jscolor.fromString(blue);
+            document.getElementById('buttonColorDb').jscolor.fromString(bluegreen);
+            document.getElementById('buttonColorD').jscolor.fromString(green);
+            document.getElementById('buttonColorEb').jscolor.fromString(yellowgreen);
+            document.getElementById('buttonColorE').jscolor.fromString(yellow);
+            document.getElementById('buttonColorF').jscolor.fromString(yelloworange);
+            document.getElementById('buttonColorGb').jscolor.fromString(orange);
+            document.getElementById('buttonColorG').jscolor.fromString(red);
+            document.getElementById('buttonColorAb').jscolor.fromString(crimson);
+            document.getElementById('buttonColorA').jscolor.fromString(violet);
+            document.getElementById('buttonColorBb').jscolor.fromString(darkslateblue);
+            document.getElementById('buttonColorB').jscolor.fromString(indigo);
         break;
         case "field":
-            document.getElementById('buttonColorC').jscolor.fromString('1c0d82');
-            document.getElementById('buttonColorDb').jscolor.fromString('ffffff');
-            document.getElementById('buttonColorD').jscolor.fromString('7e087b');
-            document.getElementById('buttonColorEb').jscolor.fromString('ffffff');
-            document.getElementById('buttonColorE').jscolor.fromString('fa0b0c');
-            document.getElementById('buttonColorF').jscolor.fromString('f88010');
-            document.getElementById('buttonColorGb').jscolor.fromString('ffffff');
-            document.getElementById('buttonColorG').jscolor.fromString('f5f33c');
-            document.getElementById('buttonColorAb').jscolor.fromString('ffffff');
-            document.getElementById('buttonColorA').jscolor.fromString('709125');
-            document.getElementById('buttonColorBb').jscolor.fromString('ffffff');
-            document.getElementById('buttonColorB').jscolor.fromString('149033');
+            document.getElementById('buttonColorC').jscolor.fromString(blue);
+            document.getElementById('buttonColorDb').jscolor.fromString(black);
+            document.getElementById('buttonColorD').jscolor.fromString(purple);
+            document.getElementById('buttonColorEb').jscolor.fromString(black);
+            document.getElementById('buttonColorE').jscolor.fromString(red);
+            document.getElementById('buttonColorF').jscolor.fromString(orange);
+            document.getElementById('buttonColorGb').jscolor.fromString(black);
+            document.getElementById('buttonColorG').jscolor.fromString(yellow);
+            document.getElementById('buttonColorAb').jscolor.fromString(black);
+            document.getElementById('buttonColorA').jscolor.fromString(yellowgreen);
+            document.getElementById('buttonColorBb').jscolor.fromString(black);
+            document.getElementById('buttonColorB').jscolor.fromString(green);
             break;
         case "jameson":
-            document.getElementById('buttonColorC').jscolor.fromString('fa0b0c');
-            document.getElementById('buttonColorDb').jscolor.fromString('f44712');
-            document.getElementById('buttonColorD').jscolor.fromString('f88010');
-            document.getElementById('buttonColorEb').jscolor.fromString('f5d23b');
-            document.getElementById('buttonColorE').jscolor.fromString('f4f33b');
-            document.getElementById('buttonColorF').jscolor.fromString('139032');
-            document.getElementById('buttonColorGb').jscolor.fromString('1b9081');
-            document.getElementById('buttonColorG').jscolor.fromString('1b0d82');
-            document.getElementById('buttonColorAb').jscolor.fromString('4b0e7d');
-            document.getElementById('buttonColorA').jscolor.fromString('7f087c');
-            document.getElementById('buttonColorBb').jscolor.fromString('a61586');
-            document.getElementById('buttonColorB').jscolor.fromString('d71386');
+            document.getElementById('buttonColorC').jscolor.fromString(red);
+            document.getElementById('buttonColorDb').jscolor.fromString(redorange);
+            document.getElementById('buttonColorD').jscolor.fromString(orange);
+            document.getElementById('buttonColorEb').jscolor.fromString(yelloworange);
+            document.getElementById('buttonColorE').jscolor.fromString(yellow);
+            document.getElementById('buttonColorF').jscolor.fromString(green);
+            document.getElementById('buttonColorGb').jscolor.fromString(bluegreen);
+            document.getElementById('buttonColorG').jscolor.fromString(blue);
+            document.getElementById('buttonColorAb').jscolor.fromString(darkslateblue);
+            document.getElementById('buttonColorA').jscolor.fromString(purple);
+            document.getElementById('buttonColorBb').jscolor.fromString(mediumvioletred);
+            document.getElementById('buttonColorB').jscolor.fromString(violet);
             break;
         case "seemann":
-            document.getElementById('buttonColorC').jscolor.fromString('6a1c1c');
-            document.getElementById('buttonColorDb').jscolor.fromString('fa0b0c');
-            document.getElementById('buttonColorD').jscolor.fromString('f88010');
-            document.getElementById('buttonColorEb').jscolor.fromString('f5d23b');
-            document.getElementById('buttonColorE').jscolor.fromString('f4f33b');
-            document.getElementById('buttonColorF').jscolor.fromString('139032');
-            document.getElementById('buttonColorGb').jscolor.fromString('1b9081');
-            document.getElementById('buttonColorG').jscolor.fromString('1b0d82');
-            document.getElementById('buttonColorAb').jscolor.fromString('7f087c');
-            document.getElementById('buttonColorA').jscolor.fromString('d71386');
-            document.getElementById('buttonColorBb').jscolor.fromString('6a1c1c');
-            document.getElementById('buttonColorB').jscolor.fromString('070707');
+            document.getElementById('buttonColorC').jscolor.fromString(darkred);
+            document.getElementById('buttonColorDb').jscolor.fromString(red);
+            document.getElementById('buttonColorD').jscolor.fromString(orange);
+            document.getElementById('buttonColorEb').jscolor.fromString(yelloworange);
+            document.getElementById('buttonColorE').jscolor.fromString(yellow);
+            document.getElementById('buttonColorF').jscolor.fromString(green);
+            document.getElementById('buttonColorGb').jscolor.fromString(bluegreen);
+            document.getElementById('buttonColorG').jscolor.fromString(blue);
+            document.getElementById('buttonColorAb').jscolor.fromString(indigo);
+            document.getElementById('buttonColorA').jscolor.fromString(violet);
+            document.getElementById('buttonColorBb').jscolor.fromString(brown);
+            document.getElementById('buttonColorB').jscolor.fromString(black);
             break;
         case "rimington":
-            document.getElementById('buttonColorC').jscolor.fromString('f90a0c');
-            document.getElementById('buttonColorDb').jscolor.fromString('9f0c09');
-            document.getElementById('buttonColorD').jscolor.fromString('f44712');
-            document.getElementById('buttonColorEb').jscolor.fromString('f78010');
-            document.getElementById('buttonColorE').jscolor.fromString('f4f33b');
-            document.getElementById('buttonColorF').jscolor.fromString('709226');
-            document.getElementById('buttonColorGb').jscolor.fromString('139032');
-            document.getElementById('buttonColorG').jscolor.fromString('26a481');
-            document.getElementById('buttonColorAb').jscolor.fromString('1b9081');
-            document.getElementById('buttonColorA').jscolor.fromString('7e087c');
-            document.getElementById('buttonColorBb').jscolor.fromString('1c0d82');
-            document.getElementById('buttonColorB').jscolor.fromString('d71386');
+            document.getElementById('buttonColorC').jscolor.fromString(red);
+            document.getElementById('buttonColorDb').jscolor.fromString(crimson);
+            document.getElementById('buttonColorD').jscolor.fromString(redorange);
+            document.getElementById('buttonColorEb').jscolor.fromString(orange);
+            document.getElementById('buttonColorE').jscolor.fromString(yellow);
+            document.getElementById('buttonColorF').jscolor.fromString(yellowgreen);
+            document.getElementById('buttonColorGb').jscolor.fromString(green);
+            document.getElementById('buttonColorG').jscolor.fromString(darkturquoise);
+            document.getElementById('buttonColorAb').jscolor.fromString(bluegreen);
+            document.getElementById('buttonColorA').jscolor.fromString(indigo);
+            document.getElementById('buttonColorBb').jscolor.fromString(blue);
+            document.getElementById('buttonColorB').jscolor.fromString(violet);
             break;
         case "bishop":
-            document.getElementById('buttonColorC').jscolor.fromString('f90a0c');
-            document.getElementById('buttonColorDb').jscolor.fromString('9f0c09');
-            document.getElementById('buttonColorD').jscolor.fromString('f88010');
-            document.getElementById('buttonColorEb').jscolor.fromString('f5d110');
-            document.getElementById('buttonColorE').jscolor.fromString('f4f33b');
-            document.getElementById('buttonColorF').jscolor.fromString('bce039');
-            document.getElementById('buttonColorGb').jscolor.fromString('139032');
-            document.getElementById('buttonColorG').jscolor.fromString('26a481');
-            document.getElementById('buttonColorAb').jscolor.fromString('7e087c');
-            document.getElementById('buttonColorA').jscolor.fromString('d71386');
-            document.getElementById('buttonColorBb').jscolor.fromString('d91951');
-            document.getElementById('buttonColorB').jscolor.fromString('f90a0c');
+            document.getElementById('buttonColorC').jscolor.fromString(red);
+            document.getElementById('buttonColorDb').jscolor.fromString(redorange);
+            document.getElementById('buttonColorD').jscolor.fromString(orange);
+            document.getElementById('buttonColorEb').jscolor.fromString(yelloworange);
+            document.getElementById('buttonColorE').jscolor.fromString(yellow);
+            document.getElementById('buttonColorF').jscolor.fromString(yellowgreen);
+            document.getElementById('buttonColorGb').jscolor.fromString(green);
+            document.getElementById('buttonColorG').jscolor.fromString(bluegreen);
+            document.getElementById('buttonColorAb').jscolor.fromString(indigo);
+            document.getElementById('buttonColorA').jscolor.fromString(violet);
+            document.getElementById('buttonColorBb').jscolor.fromString(redviolet);
+            document.getElementById('buttonColorB').jscolor.fromString(red);
             break;
         case "helmholtz":
-            document.getElementById('buttonColorC').jscolor.fromString('f5f43c');
-            document.getElementById('buttonColorDb').jscolor.fromString('149033');
-            document.getElementById('buttonColorD').jscolor.fromString('1a9081');
-            document.getElementById('buttonColorEb').jscolor.fromString('1b5ba0');
-            document.getElementById('buttonColorE').jscolor.fromString('7f087c');
-            document.getElementById('buttonColorF').jscolor.fromString('d71386');
-            document.getElementById('buttonColorGb').jscolor.fromString('9d0e55');
-            document.getElementById('buttonColorG').jscolor.fromString('fa0a0c');
-            document.getElementById('buttonColorAb').jscolor.fromString('d32c0a');
-            document.getElementById('buttonColorA').jscolor.fromString('d32b09');
-            document.getElementById('buttonColorBb').jscolor.fromString('f62d0d');
-            document.getElementById('buttonColorB').jscolor.fromString('f07a0f');
+            document.getElementById('buttonColorC').jscolor.fromString(yellow);
+            document.getElementById('buttonColorDb').jscolor.fromString(green);
+            document.getElementById('buttonColorD').jscolor.fromString(bluegreen);
+            document.getElementById('buttonColorEb').jscolor.fromString(dodgerblue);
+            document.getElementById('buttonColorE').jscolor.fromString(indigo);
+            document.getElementById('buttonColorF').jscolor.fromString(violet);
+            document.getElementById('buttonColorGb').jscolor.fromString(crimson);
+            document.getElementById('buttonColorG').jscolor.fromString(red);
+            document.getElementById('buttonColorAb').jscolor.fromString(redorange);
+            document.getElementById('buttonColorA').jscolor.fromString(redorange);
+            document.getElementById('buttonColorBb').jscolor.fromString(redorange);
+            document.getElementById('buttonColorB').jscolor.fromString(orange);
             break;
         case "scriabin":
-            document.getElementById('buttonColorC').jscolor.fromString('fa0b0c');
-            document.getElementById('buttonColorDb').jscolor.fromString('d71386');
-            document.getElementById('buttonColorD').jscolor.fromString('f4f43c');
-            document.getElementById('buttonColorEb').jscolor.fromString('5a5685');
-            document.getElementById('buttonColorE').jscolor.fromString('1b5ba0');
-            document.getElementById('buttonColorF').jscolor.fromString('9f0b09');
-            document.getElementById('buttonColorGb').jscolor.fromString('1c0d82');
-            document.getElementById('buttonColorG').jscolor.fromString('f88010');
-            document.getElementById('buttonColorAb').jscolor.fromString('7f087c');
-            document.getElementById('buttonColorA').jscolor.fromString('149032');
-            document.getElementById('buttonColorBb').jscolor.fromString('5a5685');
-            document.getElementById('buttonColorB').jscolor.fromString('1c5ba0');
+            document.getElementById('buttonColorC').jscolor.fromString(red);
+            document.getElementById('buttonColorDb').jscolor.fromString(violet);
+            document.getElementById('buttonColorD').jscolor.fromString(yellow);
+            document.getElementById('buttonColorEb').jscolor.fromString(slategray);
+            document.getElementById('buttonColorE').jscolor.fromString(dodgerblue);
+            document.getElementById('buttonColorF').jscolor.fromString(darkred);
+            document.getElementById('buttonColorGb').jscolor.fromString(blue);
+            document.getElementById('buttonColorG').jscolor.fromString(orange);
+            document.getElementById('buttonColorAb').jscolor.fromString(purple);
+            document.getElementById('buttonColorA').jscolor.fromString(green);
+            document.getElementById('buttonColorBb').jscolor.fromString(slategray);
+            document.getElementById('buttonColorB').jscolor.fromString(dodgerblue);
             break;
         case "klein":
-            document.getElementById('buttonColorC').jscolor.fromString('c40a09');
-            document.getElementById('buttonColorDb').jscolor.fromString('fa0b0c');
-            document.getElementById('buttonColorD').jscolor.fromString('f44712');
-            document.getElementById('buttonColorEb').jscolor.fromString('f88010');
-            document.getElementById('buttonColorE').jscolor.fromString('f5f43c');
-            document.getElementById('buttonColorF').jscolor.fromString('bbe038');
-            document.getElementById('buttonColorGb').jscolor.fromString('149033');
-            document.getElementById('buttonColorG').jscolor.fromString('1b9081');
-            document.getElementById('buttonColorAb').jscolor.fromString('1c0d82');
-            document.getElementById('buttonColorA').jscolor.fromString('781887');
-            document.getElementById('buttonColorBb').jscolor.fromString('d71386');
-            document.getElementById('buttonColorB').jscolor.fromString('9d0e55');
+            document.getElementById('buttonColorC').jscolor.fromString(darkred);
+            document.getElementById('buttonColorDb').jscolor.fromString(red);
+            document.getElementById('buttonColorD').jscolor.fromString(redorange);
+            document.getElementById('buttonColorEb').jscolor.fromString(orange);
+            document.getElementById('buttonColorE').jscolor.fromString(yellow);
+            document.getElementById('buttonColorF').jscolor.fromString(yellowgreen);
+            document.getElementById('buttonColorGb').jscolor.fromString(green);
+            document.getElementById('buttonColorG').jscolor.fromString(bluegreen);
+            document.getElementById('buttonColorAb').jscolor.fromString(blue);
+            document.getElementById('buttonColorA').jscolor.fromString(purple);
+            document.getElementById('buttonColorBb').jscolor.fromString(violet);
+            document.getElementById('buttonColorB').jscolor.fromString(mediumvioletred);
             break;
         case "aeppli":
-            document.getElementById('buttonColorC').jscolor.fromString('fa0b0c');
-            document.getElementById('buttonColorDb').jscolor.fromString('ffffff');
-            document.getElementById('buttonColorD').jscolor.fromString('f88010');
-            document.getElementById('buttonColorEb').jscolor.fromString('ffffff');
-            document.getElementById('buttonColorE').jscolor.fromString('f4f33b');
-            document.getElementById('buttonColorF').jscolor.fromString('ffffff');
-            document.getElementById('buttonColorGb').jscolor.fromString('139032');
-            document.getElementById('buttonColorG').jscolor.fromString('1b9081');
-            document.getElementById('buttonColorAb').jscolor.fromString('ffffff');
-            document.getElementById('buttonColorA').jscolor.fromString('1c5ba0');
-            document.getElementById('buttonColorBb').jscolor.fromString('4a0d7d');
-            document.getElementById('buttonColorB').jscolor.fromString('7e087b');
+            document.getElementById('buttonColorC').jscolor.fromString(red);
+            document.getElementById('buttonColorDb').jscolor.fromString(black);
+            document.getElementById('buttonColorD').jscolor.fromString(orange);
+            document.getElementById('buttonColorEb').jscolor.fromString(black);
+            document.getElementById('buttonColorE').jscolor.fromString(yellow);
+            document.getElementById('buttonColorF').jscolor.fromString(black);
+            document.getElementById('buttonColorGb').jscolor.fromString(green);
+            document.getElementById('buttonColorG').jscolor.fromString(bluegreen);
+            document.getElementById('buttonColorAb').jscolor.fromString(black);
+            document.getElementById('buttonColorA').jscolor.fromString(dodgerblue);
+            document.getElementById('buttonColorBb').jscolor.fromString(violet);
+            document.getElementById('buttonColorB').jscolor.fromString(purple);
             break;
         case "belmont":
-            document.getElementById('buttonColorC').jscolor.fromString('fa0b0c');
-            document.getElementById('buttonColorDb').jscolor.fromString('f44611');
-            document.getElementById('buttonColorD').jscolor.fromString('f88010');
-            document.getElementById('buttonColorEb').jscolor.fromString('f6d011');
-            document.getElementById('buttonColorE').jscolor.fromString('f4f33b');
-            document.getElementById('buttonColorF').jscolor.fromString('bce039');
-            document.getElementById('buttonColorGb').jscolor.fromString('139032');
-            document.getElementById('buttonColorG').jscolor.fromString('1b9081');
-            document.getElementById('buttonColorAb').jscolor.fromString('1c0d82');
-            document.getElementById('buttonColorA').jscolor.fromString('a61586');
-            document.getElementById('buttonColorBb').jscolor.fromString('d71386');
-            document.getElementById('buttonColorB').jscolor.fromString('ad0e48');
+            document.getElementById('buttonColorC').jscolor.fromString(red);
+            document.getElementById('buttonColorDb').jscolor.fromString(redorange);
+            document.getElementById('buttonColorD').jscolor.fromString(orange);
+            document.getElementById('buttonColorEb').jscolor.fromString(yelloworange);
+            document.getElementById('buttonColorE').jscolor.fromString(yellow);
+            document.getElementById('buttonColorF').jscolor.fromString(yellowgreen);
+            document.getElementById('buttonColorGb').jscolor.fromString(green);
+            document.getElementById('buttonColorG').jscolor.fromString(bluegreen);
+            document.getElementById('buttonColorAb').jscolor.fromString(blue);
+            document.getElementById('buttonColorA').jscolor.fromString(purple);
+            document.getElementById('buttonColorBb').jscolor.fromString(violet);
+            document.getElementById('buttonColorB').jscolor.fromString(redviolet);
             break;
         case "zieverink":
-            document.getElementById('buttonColorC').jscolor.fromString('bce039');
-            document.getElementById('buttonColorDb').jscolor.fromString('149033');
-            document.getElementById('buttonColorD').jscolor.fromString('1b9081');
-            document.getElementById('buttonColorEb').jscolor.fromString('1c0d82');
-            document.getElementById('buttonColorE').jscolor.fromString('7f087c');
-            document.getElementById('buttonColorF').jscolor.fromString('d71286');
-            document.getElementById('buttonColorGb').jscolor.fromString('6e0d45');
-            document.getElementById('buttonColorG').jscolor.fromString('a00c09');
-            document.getElementById('buttonColorAb').jscolor.fromString('fa0b0c');
-            document.getElementById('buttonColorA').jscolor.fromString('f78010');
-            document.getElementById('buttonColorBb').jscolor.fromString('ecf087');
-            document.getElementById('buttonColorB').jscolor.fromString('f5f43c');
+            document.getElementById('buttonColorC').jscolor.fromString(yellowgreen);
+            document.getElementById('buttonColorDb').jscolor.fromString(green);
+            document.getElementById('buttonColorD').jscolor.fromString(bluegreen);
+            document.getElementById('buttonColorEb').jscolor.fromString(blue);
+            document.getElementById('buttonColorE').jscolor.fromString(indigo);
+            document.getElementById('buttonColorF').jscolor.fromString(mediumvioletred);
+            document.getElementById('buttonColorGb').jscolor.fromString(purple);
+            document.getElementById('buttonColorG').jscolor.fromString(firebrick);
+            document.getElementById('buttonColorAb').jscolor.fromString(red);
+            document.getElementById('buttonColorA').jscolor.fromString(orange);
+            document.getElementById('buttonColorBb').jscolor.fromString(yellowwhite);
+            document.getElementById('buttonColorB').jscolor.fromString(yellow);
             break;
    }
 };
